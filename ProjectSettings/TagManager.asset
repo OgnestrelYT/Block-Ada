@@ -41,3 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BG
+    uniqueID: 3512835509
+    locked: 0
+  - name: Walls
+    uniqueID: 1930491559
+    locked: 0
+  - name: Player
+    uniqueID: 1751733825
+    locked: 0
+  - name: Walls_frant
+    uniqueID: 3035139977
+    locked: 0
+  - name: Items
+    uniqueID: 3586716657
+    locked: 0
+  - name: Fasad
+    uniqueID: 4148693669
+    locked: 0
