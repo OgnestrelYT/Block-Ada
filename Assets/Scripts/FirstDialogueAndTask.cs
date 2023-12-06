@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Dialogue : MonoBehaviour
+public class FirstDialogueAndTask : MonoBehaviour
 {
     public GameObject winDialog;
     public bool flag = true;
