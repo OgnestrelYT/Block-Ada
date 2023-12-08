@@ -8,6 +8,7 @@ public class Dialogue : MonoBehaviour
     public GameObject winDialog;
     public bool stopted = false;
     public bool repeatAfterLeaving = true;
+    public static bool finish = false;
     public Text text;
     public Text nameText;
     public Button button;
@@ -21,6 +22,7 @@ public class Dialogue : MonoBehaviour
 
     private void Start()
     {
+        finish = false;
         winDialog.SetActive(false);
         nameText.text = nameOfCharacter;
         avatarObj.sprite = avatarImg;
@@ -32,6 +34,7 @@ public class Dialogue : MonoBehaviour
         {
             if (numDialog + 2 > message.Length)
             {
+                finish = true;
                 if (repeatAfterLeaving)
                 {
                     numDialog = 0;
