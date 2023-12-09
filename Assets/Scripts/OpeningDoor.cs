@@ -8,6 +8,7 @@ public class OpeningDoor : MonoBehaviour
 {
     public GameObject doorOpenMenu;
     public Button button;
+    public string SceneName;
 
     private void Start()
     {
@@ -38,6 +39,7 @@ public class OpeningDoor : MonoBehaviour
 
     public void OpenDoor()
     {
-        SceneManager.LoadScene("Down floors");
+        LoadingBar.SceneName = SceneName;
+        SceneManager.LoadScene("Loading Scene");
     }
 }

@@ -9,12 +9,13 @@ public class BoolMath : MonoBehaviour
     public static bool c;
     public static bool d;
     public static bool e;
+    public bool f = true;
 
     void Update()
     {
-        if (a == true)
+        if (((((!a && b) || (!c && e)) && ((d && !e) || (a && c)))) == f)
         {
-            
+            print("asdasdasdasdasdasdasd");
         }
     }
 }
