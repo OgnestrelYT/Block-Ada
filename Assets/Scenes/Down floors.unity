@@ -2951,7 +2951,7 @@ MonoBehaviour:
   m_ZDamping: 1
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
-  m_ScreenY: 0.5
+  m_ScreenY: 0.62
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.21
   m_DeadZoneHeight: 0.99
@@ -3492,7 +3492,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1387142302}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 5
+    OrthographicSize: 4.92
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -3516,7 +3516,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608582932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8099996, y: -1.17, z: -10}
+  m_LocalPosition: {x: 1.8099997, y: 0.010800004, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11088,7 +11088,6 @@ GameObject:
   - component: {fileID: 1726400604}
   - component: {fileID: 1726400603}
   - component: {fileID: 1726400602}
-  - component: {fileID: 1726400605}
   - component: {fileID: 1726400606}
   m_Layer: 0
   m_Name: Main Camera
@@ -11132,7 +11131,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.92
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -11156,33 +11155,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726400601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8099996, y: -1.17, z: -10}
+  m_LocalPosition: {x: 1.8099997, y: 0.010800004, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1726400605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726400601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AssetsPPU: 27
-  m_RefResolutionX: 468
-  m_RefResolutionY: 260
-  m_UpscaleRT: 0
-  m_PixelSnapping: 1
-  m_CropFrameX: 0
-  m_CropFrameY: 0
-  m_StretchFill: 0
 --- !u!114 &1726400606
 MonoBehaviour:
   m_ObjectHideFlags: 0
