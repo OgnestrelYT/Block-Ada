@@ -120,7 +120,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 512
+        y: 256
         width: 256
         height: 256
       alignment: 0
@@ -141,7 +141,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 512
+        y: 256
         width: 256
         height: 256
       alignment: 0
@@ -162,7 +162,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 512
-        y: 512
+        y: 256
         width: 256
         height: 256
       alignment: 0
@@ -183,7 +183,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 768
-        y: 512
+        y: 256
         width: 256
         height: 256
       alignment: 0
@@ -204,7 +204,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1024
-        y: 512
+        y: 256
         width: 256
         height: 256
       alignment: 0
@@ -225,7 +225,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 256
+        y: 0
         width: 256
         height: 256
       alignment: 0
@@ -245,7 +245,7 @@ TextureImporter:
       name: Ada_6
       rect:
         serializedVersion: 2
-        x: 0
+        x: 256
         y: 0
         width: 256
         height: 256
@@ -266,7 +266,7 @@ TextureImporter:
       name: Ada_7
       rect:
         serializedVersion: 2
-        x: 256
+        x: 512
         y: 0
         width: 256
         height: 256
@@ -287,7 +287,7 @@ TextureImporter:
       name: Ada_8
       rect:
         serializedVersion: 2
-        x: 512
+        x: 768
         y: 0
         width: 256
         height: 256
@@ -308,7 +308,7 @@ TextureImporter:
       name: Ada_9
       rect:
         serializedVersion: 2
-        x: 768
+        x: 1024
         y: 0
         width: 256
         height: 256
@@ -325,6 +325,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Ada_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f472ad22ac753b44c83e08adf7111cf7
+      internalID: -940189798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ada_11
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5b6e28e4f553b3448dcd563561dfe87
+      internalID: 1073427862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ada_12
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58969977bec98da4da00687f698029f5
+      internalID: -1779007019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -336,7 +399,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Ada_12: -1779007019
       Ada_5: 1577830430
+      Ada_11: 1073427862
       Ada_8: -1567018074
       Ada_4: 677414663
       Ada_1: -2056942322
@@ -346,6 +411,7 @@ TextureImporter:
       Ada_2: -1112955930
       Ada_9: -2059626214
       Ada_7: -1242211469
+      Ada_10: -940189798
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

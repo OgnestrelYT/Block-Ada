@@ -35,9 +35,9 @@ public class Player : MonoBehaviour
 
         transform.position += new Vector3(movement, 0, 0) * speed * fast_speed * Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.Space) && Mathf.Abs(rb.velocity.y) < 0.05f){
-            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-        }
+        //if (Input.GetKey(KeyCode.Space) && Mathf.Abs(rb.velocity.y) < 0.05f){
+        //    rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+        //}
 
         if (Input.GetKey(KeyCode.LeftShift)){
             if (movement != 0)

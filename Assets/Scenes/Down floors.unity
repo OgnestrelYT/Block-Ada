@@ -750,7 +750,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1990489565
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 1865112876, guid: 80253061d0c687a41a54e80eb7092c7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -842,7 +842,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1990489565
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 1865112876, guid: 80253061d0c687a41a54e80eb7092c7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2808,7 +2808,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1990489565
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 1865112876, guid: 80253061d0c687a41a54e80eb7092c7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3189,7 +3189,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1990489565
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 1865112876, guid: 80253061d0c687a41a54e80eb7092c7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3316,6 +3316,7 @@ GameObject:
   - component: {fileID: 1387142300}
   - component: {fileID: 1387142299}
   - component: {fileID: 1387142303}
+  - component: {fileID: 1387142304}
   m_Layer: 0
   m_Name: Ada
   m_TagString: Player
@@ -3340,8 +3341,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.9230769, y: 5.6153846}
-    newSize: {x: 0.5, y: 1.45}
+    oldSize: {x: 9.846154, y: 9.846154}
+    newSize: {x: 9.846154, y: 9.846154}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -3409,14 +3410,14 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1751733825
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a39c4ea4e3355fc45a8d7a4190bf1704, type: 3}
+  m_Sprite: {fileID: -741336374, guid: a84a7422807125c4f8aa1553784ae57f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.5, y: 1.45}
+  m_Size: {x: 9.846154, y: 9.846154}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3449,10 +3450,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32f6f794bb24d24a89618c6570d84da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1387142304}
   speed: 3
   fast_speed: 1
   jumpForce: 5
   flip: 0
+--- !u!95 &1387142304
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387142298}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 58cbbeca94943c740902e2c656fd219a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1608582932
 GameObject:
   m_ObjectHideFlags: 0
@@ -11400,7 +11422,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1990489565
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 1865112876, guid: 80253061d0c687a41a54e80eb7092c7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
