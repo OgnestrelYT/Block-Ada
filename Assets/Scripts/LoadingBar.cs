@@ -7,16 +7,15 @@ using UnityEngine.SceneManagement;
 public class LoadingBar : MonoBehaviour
 {
     public Image bar;
-    private float proc = 6000f;
+    private float proc = 3000f;
     private float plus = 0f;
-    public static string SceneName = "Main Scene";
+    public static string SceneName = "Ada room";
 
     void Update()
     {
         if (plus < proc)
         {
             plus += Random.Range(0f, 10f);
-            print(plus);
             if (plus >= proc)
             {
                 bar.fillAmount = 1;

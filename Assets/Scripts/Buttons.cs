@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
-    public string SceneStart = "Main Scene";
+    public string SceneStart = "Ada room";
     public string SceneSettings = "Settings Scene";
     public string SCeneCredits = "Credits Scene";
 
