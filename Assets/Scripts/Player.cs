@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
 
     public bool flip = false;
 
+    public float decreaseStamina = 0.1f;
+    public float increaseStamina = 0.1f;
+
     Rigidbody2D rb;
     SpriteRenderer sr;
 
@@ -40,16 +43,32 @@ public class Player : MonoBehaviour
         //}
 
         if (Input.GetKey(KeyCode.LeftShift)){
-            if (movement != 0)
-            {
-                fast_speed = 2f;
-                animator.SetBool("IsRun", true);
+            if (StaminaBar.staminaNow > 0){
+                if (movement != 0)
+                {
+                    StaminaBar.staminaNow -= decreaseStamina;
+                    fast_speed = 2f;
+                    animator.SetBool("IsRun", true);
+                }
+                else
+                {
+                    if (StaminaBar.staminaNow < StaminaBar.staminaMax){
+                        StaminaBar.staminaNow += increaseStamina;
+                    }
+                    animator.SetBool("IsRun", false);
+                }
             }
             else
             {
+                StaminaBar.staminaNow = 0;
+                fast_speed = 1f;
                 animator.SetBool("IsRun", false);
             }
         } else {
+            if (StaminaBar.staminaNow < StaminaBar.staminaMax){
+                StaminaBar.staminaNow += increaseStamina;
+            }
+
             fast_speed = 1f;
             animator.SetBool("IsRun", false);
         }
