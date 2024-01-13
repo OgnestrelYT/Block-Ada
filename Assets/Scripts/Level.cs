@@ -22,7 +22,7 @@ public class Level : MonoBehaviour, IBeginDragHandler, IDragHandler
         if (Mathf.Abs(eventData.delta.x) < Mathf.Abs(eventData.delta.y))
         {
             if (inArea)
-            {
+            {   
                 if (eventData.delta.y > 0){
                     animator.SetBool("IsOn", true);
                     IsOn = true;
@@ -32,6 +32,13 @@ public class Level : MonoBehaviour, IBeginDragHandler, IDragHandler
                 }
             }
         }
+    }
+
+    public void OnEnter() {
+        animator.SetBool("isAct", true);
+    }
+    public void OnExit() {
+        animator.SetBool("isAct", false);
     }
 
     private void Update()
@@ -62,6 +69,7 @@ public class Level : MonoBehaviour, IBeginDragHandler, IDragHandler
     {
         if (other.tag == "Player")
         {
+            animator.SetBool("InArea", true);
             inArea = true;
         }
     }
@@ -70,6 +78,7 @@ public class Level : MonoBehaviour, IBeginDragHandler, IDragHandler
     {
         if (other.tag == "Player")
         {
+            animator.SetBool("InArea", false);
             inArea = false;
         }
     }
@@ -78,4 +87,5 @@ public class Level : MonoBehaviour, IBeginDragHandler, IDragHandler
     {
         
     }
+
 }
