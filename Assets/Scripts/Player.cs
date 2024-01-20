@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 
     public float decreaseStamina = 0.1f;
     public float increaseStamina = 0.1f;
+    public static bool isStop = false;
 
     Rigidbody2D rb;
     SpriteRenderer sr;
@@ -52,7 +53,7 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
-                    if (StaminaBar.staminaNow < StaminaBar.staminaMax){
+                    if ((StaminaBar.staminaNow < StaminaBar.staminaMax) && (!isStop)){
                         StaminaBar.staminaNow += increaseStamina;
                     }
                     animator.SetBool("IsRun", false);
@@ -65,7 +66,7 @@ public class Player : MonoBehaviour
                 animator.SetBool("IsRun", false);
             }
         } else {
-            if (StaminaBar.staminaNow < StaminaBar.staminaMax){
+            if ((StaminaBar.staminaNow < StaminaBar.staminaMax) && (!isStop)){
                 StaminaBar.staminaNow += increaseStamina;
             }
 
