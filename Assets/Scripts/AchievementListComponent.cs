@@ -7,6 +7,7 @@ public class AchievementListComponent : MonoBehaviour {
 	[SerializeField] private int _achievementID;
 	[SerializeField] private RectTransform _rectTransform;
 	[SerializeField] private Image _icon;
+	[SerializeField] private Image _bg;
 	[SerializeField] private Text _title;
 	[SerializeField] private Text _description;
 	[SerializeField] private Slider _progressBar;
@@ -29,9 +30,10 @@ public class AchievementListComponent : MonoBehaviour {
 		_description.text = description;
 	}
 
-	public void SetAchievement(Sprite icon, int targetValue, int currentValue)
+	public void SetAchievement(Sprite icon, Sprite bg, int targetValue, int currentValue)
 	{
 		_icon.sprite = icon;
+		_bg.sprite = bg;
 		_progressText.text = currentValue + "/" + targetValue;
 		_progressBar.value = (float)currentValue/(float)targetValue;
 	}

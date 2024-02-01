@@ -32,6 +32,7 @@ public class AchievementSystem : MonoBehaviour {
 		public int currentValue; // текущее значение, достигнутое пользователем
 		public Sprite locked; // спрайт, когда ачивка заблокирована
 		public Sprite unlocked; // спрайт, если ачивка разблокирована
+		public Sprite bg;
 	}
 
 	public static AchievementSystem use
@@ -108,7 +109,7 @@ public class AchievementSystem : MonoBehaviour {
 			for(int i = 0; i < achievements.Length; i++)
 			{
 				Sprite sprite = (achievements[i].isAchieved) ? achievements[i].unlocked : achievements[i].locked;
-				list[i].SetAchievement(sprite, achievements[i].targetValue, achievements[i].currentValue);
+				list[i].SetAchievement(sprite, achievements[i].bg, achievements[i].targetValue, achievements[i].currentValue);
 			}
 		}
 
@@ -134,7 +135,7 @@ public class AchievementSystem : MonoBehaviour {
 
 			if(!messageSample.isActive) // показываем ачивку, если в данный момент не показывается
 			{
-				messageSample.SetAchievement(achievements[id].unlocked, achievements[id].title, achievements[id].description);
+				messageSample.SetAchievement(achievements[id].unlocked, achievements[id].bg, achievements[id].title, achievements[id].description);
 			}
 			else // или запоминаем ачивку, чтобы показать позже
 			{
@@ -142,6 +143,7 @@ public class AchievementSystem : MonoBehaviour {
 				a.description = achievements[id].description;
 				a.title = achievements[id].title;
 				a.sprite = achievements[id].unlocked;
+				a.bg = achievements[id].bg;
 				achieveLast.Add(a);
 			}
 		}
@@ -152,6 +154,7 @@ public class AchievementSystem : MonoBehaviour {
 		public string title;
 		public string description;
 		public Sprite sprite;
+		public Sprite bg;
 	}
 
 	public void ShowNextAchievement() // поочередный показ ачивок, если было открыта сразу несколько
@@ -168,7 +171,7 @@ public class AchievementSystem : MonoBehaviour {
 			return;
 		}
 
-		messageSample.SetAchievement(achieveLast[j].sprite, achieveLast[j].title, achieveLast[j].description);
+		messageSample.SetAchievement(achieveLast[j].sprite, achieveLast[j].bg, achieveLast[j].title, achieveLast[j].description);
 		achieveLast.RemoveAt(j);
 	}
 
