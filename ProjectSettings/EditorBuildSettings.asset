@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main menu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Ada room.unity
+    path: Assets/Scenes/Ada room_not.unity
     guid: 72907ee93d7774b49af306c9047334fe
   - enabled: 1
     path: Assets/Scenes/Loading Scene.unity

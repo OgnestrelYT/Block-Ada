@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class LoadingBar : MonoBehaviour
 {
     public Image bar;
-    private float proc = 3000f;
+    private float proc = 300f;
     private float plus = 0f;
     public static string SceneName = "Ada room";
 

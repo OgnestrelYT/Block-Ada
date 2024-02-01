@@ -68,6 +68,7 @@ public class PauseMenu : MonoBehaviour
         InMain = false;
         InAchievements = true;
         pauseMain.SetActive(false);
+        AchievementSystem.use.ShowAchievementList(true);
         pauseAchievements.SetActive(true);
         PauseGame = true;
     }
@@ -82,6 +83,9 @@ public class PauseMenu : MonoBehaviour
     public void Back(){
         InMain = true;
         pauseAchievements.SetActive(false);
+        if (AchievementSystem.isActive) {
+            AchievementSystem.use.ShowAchievementList(false);
+        }
         pauseSettings.SetActive(false);
         pauseMain.SetActive(true);
         pauseGameMenu.SetActive(true);
