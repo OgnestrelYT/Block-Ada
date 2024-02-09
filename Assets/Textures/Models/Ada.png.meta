@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a84a7422807125c4f8aa1553784ae57f
+guid: 902b15686cc757f40b73587af39ac50a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -120,6 +120,174 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe9eddb300fe764448adf9fbbe6d4f09
+      internalID: -2006942964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ada_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 787d98ebdda3bf346bd7dd32053348c1
+      internalID: -1748195000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ada_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c2fc21b4db88e745baf59df9a403897
+      internalID: 585007060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ada_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aef9f341186e1c445bd37f735435da14
+      internalID: 489430479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ada_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70170bce552d25d4b82645b298dd58ea
+      internalID: 806827408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ada_5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f9030f8fe16d3048927c0981235793c
+      internalID: 955170902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ada_6
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62bf2b7cf5f93ec4eb37fe8f0848f31a
+      internalID: -1812774425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ada_7
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ccc6f65d346c84faf0899414423583
+      internalID: 1340498965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ada_8
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 256
         width: 256
         height: 256
@@ -130,14 +298,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abd44200a365b9f49b2047b2790403f8
-      internalID: -741336374
+      spriteID: 477db23a24b51ec45bd0b3acca54af26
+      internalID: -706358477
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ada_1
+      name: Ada_9
       rect:
         serializedVersion: 2
         x: 256
@@ -151,14 +319,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f003bf930e357bf4bb00e7f224d02e1a
-      internalID: -2056942322
+      spriteID: efc873ccabef9984d828df48833a744e
+      internalID: 1872409877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ada_2
+      name: Ada_10
       rect:
         serializedVersion: 2
         x: 512
@@ -172,14 +340,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 102b554bb9d111746b1f24a8e622ea1e
-      internalID: -1112955930
+      spriteID: 3e7aa7dfa25c52a4c8087b58c29c0b5d
+      internalID: 728429357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ada_3
+      name: Ada_11
       rect:
         serializedVersion: 2
         x: 768
@@ -193,35 +361,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33fceaefd8dd8e4409da6ad034c47e66
-      internalID: -707682791
+      spriteID: 8778f4cf872bdcd4e975da415843470f
+      internalID: -1525051421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ada_4
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 45a50c36f6f77e6428f12168ecc1286b
-      internalID: 677414663
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ada_5
+      name: Ada_12
       rect:
         serializedVersion: 2
         x: 0
@@ -235,14 +382,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5da109d88dab97e42bc55b50582f722b
-      internalID: 1577830430
+      spriteID: ca5c16ef235a1ca49937c5bbbc58ffa1
+      internalID: -1217373784
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ada_6
+      name: Ada_13
       rect:
         serializedVersion: 2
         x: 256
@@ -256,14 +403,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af4b3745753268448970820fb16e20a2
-      internalID: -467007234
+      spriteID: 31963bd8f037f5e43a65a3c4fe659879
+      internalID: 2142545936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ada_7
+      name: Ada_14
       rect:
         serializedVersion: 2
         x: 512
@@ -277,14 +424,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1ccc7f42bc316a4c879ca4ee52c0fb9
-      internalID: -1242211469
+      spriteID: c0e575fe0931d984d877a4e8d73d3541
+      internalID: -1818072288
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ada_8
+      name: Ada_15
       rect:
         serializedVersion: 2
         x: 768
@@ -298,92 +445,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48fd4fdb20030cc489577ddd8ca5324c
-      internalID: -1567018074
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ada_9
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 75fd75a02950e1344adf7b5579a4f87d
-      internalID: -2059626214
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ada_10
-      rect:
-        serializedVersion: 2
-        x: 1280
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f472ad22ac753b44c83e08adf7111cf7
-      internalID: -940189798
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ada_11
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f5b6e28e4f553b3448dcd563561dfe87
-      internalID: 1073427862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ada_12
-      rect:
-        serializedVersion: 2
-        x: 1792
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58969977bec98da4da00687f698029f5
-      internalID: -1779007019
+      spriteID: 0bdd95eede032c94d94362457ae30268
+      internalID: 1985151667
       vertices: []
       indices: 
       edges: []
@@ -399,19 +462,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Ada_12: -1779007019
-      Ada_5: 1577830430
-      Ada_11: 1073427862
-      Ada_8: -1567018074
-      Ada_4: 677414663
-      Ada_1: -2056942322
-      Ada_6: -467007234
-      Ada_0: -741336374
-      Ada_3: -707682791
-      Ada_2: -1112955930
-      Ada_9: -2059626214
-      Ada_7: -1242211469
-      Ada_10: -940189798
+      Ada_12: -1217373784
+      Ada_5: 955170902
+      Ada_11: -1525051421
+      Ada_8: -706358477
+      Ada_4: 806827408
+      Ada_14: -1818072288
+      Ada_1: -1748195000
+      Ada_6: -1812774425
+      Ada_0: -2006942964
+      Ada_3: 489430479
+      Ada_2: 585007060
+      Ada_13: 2142545936
+      Ada_9: 1872409877
+      Ada_7: 1340498965
+      Ada_10: 728429357
+      Ada_15: 1985151667
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
