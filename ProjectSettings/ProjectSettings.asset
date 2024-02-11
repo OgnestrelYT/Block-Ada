@@ -664,11 +664,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 
+  cloudProjectId: c0cf8e42-b778-4a1f-8764-b7a6d1cc4629
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: Block Ada
+  organizationId: ognestrelyt
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

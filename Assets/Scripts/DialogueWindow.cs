@@ -20,7 +20,6 @@ public class DialogueWindow : MonoBehaviour
 	{
 		dialogueWin.SetActive(true);
         skipButton.onClick.AddListener(NextDialog);
-        Debug.Log("Iphone");
 	}
 
 	void Hide()

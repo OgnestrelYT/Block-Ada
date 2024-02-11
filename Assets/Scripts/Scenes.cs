@@ -65,7 +65,7 @@ public class Scenes : MonoBehaviour
 
     void Awake()
 	{
-        dialogueWindow.dialogueWin.SetActive(false);
+        dialogueWindow.gameObject.SetActive(false);
         countActs = acts.Length;
         canSkip = false;
         Load();
@@ -81,7 +81,7 @@ public class Scenes : MonoBehaviour
 
     public void Update()
     {
-        if ((canSkip) && (numAct < countActs)) {
+        if ((canSkip) && (numAct < countActs - 1)) {
             canSkip = false;
             numAct++;
             Load();
