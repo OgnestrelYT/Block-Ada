@@ -27,7 +27,7 @@ public class DialogueWindow : MonoBehaviour
         numDialog = 0;
         skipButton.onClick.RemoveAllListeners();
 		dialogueWin.SetActive(false);
-        Scenes.canSkip = true;
+        Scenes.canSkipD = true;
 	}
 
     public void SetDialogue(Sprite avatar, Sprite bg, string name, string[] messages)

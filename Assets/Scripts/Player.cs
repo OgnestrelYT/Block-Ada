@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     public float increaseStamina = 0.1f;
     public static bool isStop = false;
 
+    public static bool canMove = true;
+
     Rigidbody2D rb;
     SpriteRenderer sr;
 
@@ -37,13 +39,18 @@ public class Player : MonoBehaviour
             animator.SetInteger("Speed", 1);
         }
 
-        transform.position += new Vector3(movement, 0, 0) * speed * fast_speed * Time.deltaTime;
+        if (canMove) {
+            transform.position += new Vector3(movement, 0, 0) * speed * fast_speed * Time.deltaTime;
+        } else {
+            animator.SetInteger("Speed", 0);
+        }
+        
 
         //if (Input.GetKey(KeyCode.Space) && Mathf.Abs(rb.velocity.y) < 0.05f){
         //    rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         //}
 
-        if (Input.GetKey(KeyCode.LeftShift)){
+        if ((Input.GetKey(KeyCode.LeftShift)) && (canMove)) {
             if (StaminaBar.staminaNow > 0){
                 if (movement != 0)
                 {
@@ -53,7 +60,7 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
-                    if ((StaminaBar.staminaNow < StaminaBar.staminaMax) && (!isStop)){
+                    if ((StaminaBar.staminaNow < StaminaBar.staminaMax) && (!isStop)) {
                         StaminaBar.staminaNow += increaseStamina;
                     }
                     animator.SetBool("IsRun", false);
@@ -81,6 +88,8 @@ public class Player : MonoBehaviour
                 flip = false;
             }
         }
-        sr.flipX = flip;
+        if (canMove) {
+            sr.flipX = flip;
+        }
     }
 }

@@ -8,7 +8,9 @@ public class Scenes : MonoBehaviour
 {
     [HideInInspector, SerializeField] public int countActs; // всего актов
     [HideInInspector, SerializeField] public int numAct = 0; // акт сейчас
-    [HideInInspector] public static bool canSkip; // можно ли идти дальше
+    [HideInInspector] public static bool canSkipD; // можно ли идти дальше
+    [HideInInspector] public static bool canSkipA; // можно ли идти дальше
+    [HideInInspector] public static bool canSkipT; // можно ли идти дальше
 
 
     [Header("Редактирование:")]
@@ -54,12 +56,12 @@ public class Scenes : MonoBehaviour
 
     [System.Serializable] struct Animation
     {
-        public bool isInteraction; // можно ли взаимодействовать
+        public Animator[] animationsList; // список анимаций
     }
 
     [System.Serializable] struct Tasks
     {
-        public bool isInteraction; // можно ли взаимодействовать
+        public GameObject[] gameObjList; // список заданий
     }
 
 
@@ -67,22 +69,62 @@ public class Scenes : MonoBehaviour
 	{
         dialogueWindow.gameObject.SetActive(false);
         countActs = acts.Length;
-        canSkip = false;
+        canSkipA = false;
+        canSkipD = false;
+        canSkipT = false;
         Load();
     }
 
     public void Load()
     {   
+        Player.canMove = acts[numAct].moveAllow;
+        Debug.Log(acts[numAct].animations.animationsList.Length);
+
+        // Диалоги
         if (acts[numAct].dialogues.messages.Length > 0) {
             dialogueWindow.SetDialogue(acts[numAct].dialogues.avatar, acts[numAct].dialogues.bg, acts[numAct].dialogues.name, acts[numAct].dialogues.messages);
+        } else {
+            canSkipD = true;
+        }
+        
+        // Анимации
+        if (acts[numAct].animations.animationsList.Length > 0) {
+            Debug.Log("Iphone");
+            for (int i = 0; i < acts[numAct].animations.animationsList.Length; i++)
+            {
+                acts[numAct].animations.animationsList[i].SetBool("isStart", true);
+            }
+            Debug.Log("asdasdasdasdasdasdasd");
+        } else {
+            canSkipA = true;
+        }
+
+        // Задания
+        if (acts[numAct].tasks.gameObjList.Length > 0) {
+            Debug.Log("Iasd");
+        } else {
+            canSkipT = true;
         }
     }
 
 
     public void Update()
     {
-        if ((canSkip) && (numAct < countActs - 1)) {
-            canSkip = false;
+        if (acts[numAct].animations.animationsList.Length > 0) {
+            Debug.Log("Iphone");
+            for (int i = 0; i < acts[numAct].animations.animationsList.Length; i++)
+            {
+                if (!(acts[numAct].animations.animationsList[i].GetCurrentAnimatorStateInfo(0).IsName("Using"))) {
+                    canSkipA = true;
+                }
+                acts[numAct].animations.animationsList[i].SetBool("isStart", false);
+            }
+        }
+
+        if ((canSkipD) && (canSkipA) && (canSkipT) && (numAct < countActs - 1)) {
+            canSkipD = false;
+            canSkipA = false;
+            canSkipT = false;
             numAct++;
             Load();
         }
