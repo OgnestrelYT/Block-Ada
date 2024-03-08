@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public bool PauseGame = false;
-    public bool InMain = false;
-    public bool InSettings = false;
-    public bool InAchievements = false;
+    [HideInInspector, SerializeField] public static bool PauseGame = false;
+    [HideInInspector, SerializeField] public bool InMain = false;
+    [HideInInspector, SerializeField] public bool InSettings = false;
+    [HideInInspector, SerializeField] public bool InAchievements = false;
     public GameObject pauseGameMenu;
     public GameObject pauseMain;
     public GameObject pauseSettings;

@@ -9,13 +9,13 @@ public class Player : MonoBehaviour
     public float fast_speed = 1f;
     public float jumpForce = 5f;
 
-    public bool flip = false;
+    [HideInInspector, SerializeField] public bool flip = false;
 
     public float decreaseStamina = 0.1f;
     public float increaseStamina = 0.1f;
-    public static bool isStop = false;
-
-    public static bool canMove = true;
+    [HideInInspector, SerializeField] public static bool isStop = false;
+    [HideInInspector, SerializeField] public bool canRun = true;
+    [HideInInspector, SerializeField] public static bool canMove = true;
 
     Rigidbody2D rb;
     SpriteRenderer sr;
@@ -50,9 +50,9 @@ public class Player : MonoBehaviour
         //    rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         //}
 
-        if ((Input.GetKey(KeyCode.LeftShift)) && (canMove)) {
+        if ((Input.GetKey(KeyCode.LeftShift)) && (canMove) && !(PauseMenu.PauseGame)) {
             if (StaminaBar.staminaNow > 0){
-                if (movement != 0)
+                if ((movement != 0) && (canRun))
                 {
                     StaminaBar.staminaNow -= decreaseStamina;
                     fast_speed = 2f;
@@ -69,16 +69,26 @@ public class Player : MonoBehaviour
             else
             {
                 StaminaBar.staminaNow = 0;
+                if ((StaminaBar.staminaNow < StaminaBar.staminaMax) && (!isStop)) {
+                    StaminaBar.staminaNow += increaseStamina;
+                    canRun = false;
+                }
                 fast_speed = 1f;
-                animator.SetBool("IsRun", false);
+                if (!(PauseMenu.PauseGame)) {
+                    animator.SetBool("IsRun", false);
+                }
             }
+            
         } else {
-            if ((StaminaBar.staminaNow < StaminaBar.staminaMax) && (!isStop)){
+            canRun = true;
+            if ((StaminaBar.staminaNow < StaminaBar.staminaMax) && (!isStop) && !(PauseMenu.PauseGame)){
                 StaminaBar.staminaNow += increaseStamina;
             }
 
             fast_speed = 1f;
-            animator.SetBool("IsRun", false);
+            if (!(PauseMenu.PauseGame)) {
+                animator.SetBool("IsRun", false);
+            }
         }
 
         if (movement < 0){

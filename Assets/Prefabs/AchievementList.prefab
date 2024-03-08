@@ -486,7 +486,7 @@ MonoBehaviour:
   _bg: {fileID: 7093840259178815361}
   _title: {fileID: 6270350365672913396}
   _description: {fileID: 5931327079540823713}
-  _progressBar: {fileID: 0}
+  _progressBar: {fileID: 9184411933547363538}
   _progressText: {fileID: 654948270251051646}
 --- !u!1 &6819389637942408457
 GameObject:
@@ -760,7 +760,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 9220892700390684312}
   m_FillRect: {fileID: 5085496911794699901}
   m_HandleRect: {fileID: 5301327335771468049}

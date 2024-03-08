@@ -53,6 +53,7 @@ public class AchievementSystem : MonoBehaviour {
 		listSample.gameObject.SetActive(false);
 		messageSample.gameObject.SetActive(false);
 		listTransform.gameObject.SetActive(false);
+
 		Load();
 	}
 
@@ -121,6 +122,7 @@ public class AchievementSystem : MonoBehaviour {
 	// value - на сколько пунктов изменить
 	public void AdjustAchievement(int id, int value)
 	{
+		Debug.Log("323333333333333333333333333333333333333333333333");
 		if(achievements[id].isAchieved || id < 0 || id > achievements.Length) return;
 
 		achievements[id].currentValue += value;
@@ -147,6 +149,7 @@ public class AchievementSystem : MonoBehaviour {
 				achieveLast.Add(a);
 			}
 		}
+		Debug.Log("I1111111111111111111111111111111111111111");
 	}
 
 	struct Achieve

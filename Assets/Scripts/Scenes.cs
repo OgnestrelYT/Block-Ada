@@ -11,6 +11,8 @@ public class Scenes : MonoBehaviour
     [HideInInspector] public static bool canSkipD; // можно ли идти дальше
     [HideInInspector] public static bool canSkipA; // можно ли идти дальше
     [HideInInspector] public static bool canSkipT; // можно ли идти дальше
+    [HideInInspector] public static bool canSkipTime; // можно ли идти дальше
+    [HideInInspector] public static float timer = 0f; // таймер
 
 
     [Header("Редактирование:")]
@@ -20,6 +22,7 @@ public class Scenes : MonoBehaviour
 
 	[Header("Шаблоны:")]
 	[SerializeField] private DialogueWindow dialogueWindow; // шаблон для диалогового окна
+    [SerializeField] private GameObject black; // шаблон затемнения
 
 
     [System.Serializable] struct Act
@@ -27,17 +30,28 @@ public class Scenes : MonoBehaviour
         [Space]
         [Header("Списки:")]
         [Space]
+        [SerializeField] public float times; // время
+        [Space]
         [SerializeField] public Dialogue dialogues; // настраиваемый список диалога
         [Space]
         [SerializeField] public Animation animations; // настраиваемый список анимаций
         [Space]
         [SerializeField] public Tasks tasks; // настраиваемый список диалога
+        [Space]
+        [SerializeField] public bool dark; // настраиваемый список диалога
 
         [Space]
 
         [Header("Разрешения:")]
         public bool moveAllow; // можно ли двигаться
         public bool interactionAllow; // можно ли взаимодействовать
+
+        [Space]
+
+        [Header("Ачивки:")]
+        [SerializeField] public Achievements achievements; // настраиваемый список диалога
+
+        [Space]
 
         [Header("Описание:")]
         public string description; // описание чисто для кодера
@@ -64,14 +78,22 @@ public class Scenes : MonoBehaviour
         public GameObject[] gameObjList; // список заданий
     }
 
+    [System.Serializable] struct Achievements
+    {
+        public int[] id;
+        public int[] value;
+    }
+
 
     void Awake()
 	{
         dialogueWindow.gameObject.SetActive(false);
+        black.SetActive(false);
         countActs = acts.Length;
         canSkipA = false;
         canSkipD = false;
         canSkipT = false;
+        canSkipTime = false;
         Load();
     }
 
@@ -79,6 +101,25 @@ public class Scenes : MonoBehaviour
     {   
         Player.canMove = acts[numAct].moveAllow;
         Debug.Log(acts[numAct].animations.animationsList.Length);
+
+        // Ачивки
+        if (acts[numAct].achievements.id.Length > 0) {
+            for (int i = 0; i < acts[numAct].achievements.id.Length; i++)
+            {
+                int id = acts[numAct].achievements.id[i];
+                int value = acts[numAct].achievements.value[i];
+                Debug.Log(id);
+                AchievementSystem.AdjustAchievement(id, value);
+                Debug.Log("Iphone");
+                AchievementSystem.use.Save();
+                Debug.Log("Iphoneeee");
+            }
+        }
+
+        // Затемнение
+        if (acts[numAct].dark) {
+            black.SetActive(true);
+        }
 
         // Диалоги
         if (acts[numAct].dialogues.messages.Length > 0) {
@@ -110,6 +151,16 @@ public class Scenes : MonoBehaviour
 
     public void Update()
     {
+        // Время
+        if (acts[numAct].times > 0f) {
+            timer += Time.time;
+            if (timer > acts[numAct].times) {
+                canSkipTime = true;
+            }
+        } else {
+            canSkipTime = true;
+        }
+
         if (acts[numAct].animations.animationsList.Length > 0) {
             Debug.Log("Iphone");
             for (int i = 0; i < acts[numAct].animations.animationsList.Length; i++)
@@ -121,10 +172,13 @@ public class Scenes : MonoBehaviour
             }
         }
 
-        if ((canSkipD) && (canSkipA) && (canSkipT) && (numAct < countActs - 1)) {
+        if ((canSkipD) && (canSkipTime) && (canSkipA) && (canSkipT) && (numAct < countActs - 1)) {
+            timer = 0f;
+            black.SetActive(false);
             canSkipD = false;
             canSkipA = false;
             canSkipT = false;
+            canSkipTime = false;
             numAct++;
             Load();
         }
