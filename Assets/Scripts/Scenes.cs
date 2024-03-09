@@ -85,7 +85,7 @@ public class Scenes : MonoBehaviour
     }
 
 
-    void Awake()
+    void Start()
 	{
         dialogueWindow.gameObject.SetActive(false);
         black.SetActive(false);
@@ -99,27 +99,20 @@ public class Scenes : MonoBehaviour
 
     public void Load()
     {   
+        // Передвижение
         Player.canMove = acts[numAct].moveAllow;
-        Debug.Log(acts[numAct].animations.animationsList.Length);
 
         // Ачивки
         if (acts[numAct].achievements.id.Length > 0) {
             for (int i = 0; i < acts[numAct].achievements.id.Length; i++)
             {
-                int id = acts[numAct].achievements.id[i];
-                int value = acts[numAct].achievements.value[i];
-                Debug.Log(id);
-                AchievementSystem.AdjustAchievement(id, value);
-                Debug.Log("Iphone");
+                AchievementSystem.use.AdjustAchievement(acts[numAct].achievements.id[i], acts[numAct].achievements.value[i]);
                 AchievementSystem.use.Save();
-                Debug.Log("Iphoneeee");
             }
         }
 
         // Затемнение
-        if (acts[numAct].dark) {
-            black.SetActive(true);
-        }
+        black.SetActive(acts[numAct].dark);
 
         // Диалоги
         if (acts[numAct].dialogues.messages.Length > 0) {

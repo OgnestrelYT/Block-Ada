@@ -19,8 +19,6 @@ public class AchievementSystem : MonoBehaviour {
 
 	private static AchievementSystem _internal;
 	private static bool _active;
-	public delegate void MethodOnAchievement(int id, string title, string description);
-	public event MethodOnAchievement OnAchievement;
 	private List<Achieve> achieveLast;
 
 	[System.Serializable] struct Achievement
@@ -122,7 +120,6 @@ public class AchievementSystem : MonoBehaviour {
 	// value - на сколько пунктов изменить
 	public void AdjustAchievement(int id, int value)
 	{
-		Debug.Log("323333333333333333333333333333333333333333333333");
 		if(achievements[id].isAchieved || id < 0 || id > achievements.Length) return;
 
 		achievements[id].currentValue += value;
@@ -133,7 +130,6 @@ public class AchievementSystem : MonoBehaviour {
 		{
 			achievements[id].currentValue = achievements[id].targetValue;
 			achievements[id].isAchieved = true;
-			OnAchievement(id, achievements[id].title, achievements[id].description);
 
 			if(!messageSample.isActive) // показываем ачивку, если в данный момент не показывается
 			{
@@ -149,7 +145,6 @@ public class AchievementSystem : MonoBehaviour {
 				achieveLast.Add(a);
 			}
 		}
-		Debug.Log("I1111111111111111111111111111111111111111");
 	}
 
 	struct Achieve
