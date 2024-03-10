@@ -199,4 +199,14 @@ public class AchievementSystem : MonoBehaviour {
 		}
 	}
 	#endif
+
+	public void ToZero() // инструмент для обнуления ачивок
+	{
+		for(int i = 0; i < achievements.Length; i++)
+		{
+			achievements[i].currentValue = 0;
+			achievements[i].isAchieved = false;
+		}
+		Save();
+	}
 }

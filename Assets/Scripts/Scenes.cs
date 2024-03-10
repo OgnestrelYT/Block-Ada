@@ -13,6 +13,8 @@ public class Scenes : MonoBehaviour
     [HideInInspector] public static bool canSkipT; // можно ли идти дальше
     [HideInInspector] public static bool canSkipTime; // можно ли идти дальше
     [HideInInspector] public static float timer = 0f; // таймер
+    [HideInInspector] public static string objtag = ""; // тэг для столкновений
+    [HideInInspector] public static bool need = false; // нужно ли проверять столкновения
 
 
     [Header("Редактирование:")]
@@ -36,7 +38,7 @@ public class Scenes : MonoBehaviour
         [Space]
         [SerializeField] public Animation animations; // настраиваемый список анимаций
         [Space]
-        [SerializeField] public Tasks tasks; // настраиваемый список диалога
+        [SerializeField] public GameObject[] task; // настраиваемый Task
         [Space]
         [SerializeField] public bool dark; // настраиваемый список диалога
 
@@ -71,11 +73,6 @@ public class Scenes : MonoBehaviour
     [System.Serializable] struct Animation
     {
         public Animator[] animationsList; // список анимаций
-    }
-
-    [System.Serializable] struct Tasks
-    {
-        public GameObject[] gameObjList; // список заданий
     }
 
     [System.Serializable] struct Achievements
@@ -134,9 +131,12 @@ public class Scenes : MonoBehaviour
         }
 
         // Задания
-        if (acts[numAct].tasks.gameObjList.Length > 0) {
-            Debug.Log("Iasd");
+        if (acts[numAct].task.Length > 0) {
+            canSkipT = false;
+            need = true;
+            objtag = acts[numAct].task[0].tag;
         } else {
+            need = false;
             canSkipT = true;
         }
     }
@@ -146,7 +146,7 @@ public class Scenes : MonoBehaviour
     {
         // Время
         if (acts[numAct].times > 0f) {
-            timer += Time.time;
+            timer += Time.deltaTime;
             if (timer > acts[numAct].times) {
                 canSkipTime = true;
             }

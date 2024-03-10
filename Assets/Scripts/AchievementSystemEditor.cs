@@ -11,10 +11,17 @@ public class AchievementSystemEditor : Editor {
 	{
 		DrawDefaultInspector();
 		AchievementSystem e = (AchievementSystem)target;
+
 		GUILayout.Label("Генерировать список ачивок:", EditorStyles.boldLabel);
 		if(GUILayout.Button("Create / Update"))
 		{
 			e.CreateInEditor();
+		}
+
+		GUILayout.Label("Обнулить ачивки:", EditorStyles.boldLabel);
+		if(GUILayout.Button("Обнулить ачивки"))
+		{
+			e.ToZero();
 		}
 	}
 }

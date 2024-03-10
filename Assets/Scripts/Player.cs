@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     [HideInInspector, SerializeField] public static bool isStop = false;
     [HideInInspector, SerializeField] public bool canRun = true;
     [HideInInspector, SerializeField] public static bool canMove = true;
+    [HideInInspector, SerializeField] public static int stam = 200;
 
     Rigidbody2D rb;
     SpriteRenderer sr;
@@ -24,6 +25,15 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (Scenes.need) {
+            if (other.tag == Scenes.objtag) {
+                Scenes.canSkipT = true;
+            }
+        }
     }
 
     void Update()
@@ -54,15 +64,15 @@ public class Player : MonoBehaviour
             if (StaminaBar.staminaNow > 0){
                 if ((movement != 0) && (canRun))
                 {
-                    StaminaBar.staminaNow -= decreaseStamina;
+                    StaminaBar.staminaNow -= decreaseStamina * Time.deltaTime * stam;
                     fast_speed = 2f;
                     animator.SetBool("IsRun", true);
                 }
                 else
                 {
-                    if ((StaminaBar.staminaNow < StaminaBar.staminaMax) && (!isStop)) {
-                        StaminaBar.staminaNow += increaseStamina;
-                    }
+                    // if ((StaminaBar.staminaNow < StaminaBar.staminaMax) && (!isStop)) {
+                    //     StaminaBar.staminaNow += increaseStamina * Time.deltaTime * stam;
+                    // }
                     animator.SetBool("IsRun", false);
                 }
             }
@@ -70,7 +80,7 @@ public class Player : MonoBehaviour
             {
                 StaminaBar.staminaNow = 0;
                 if ((StaminaBar.staminaNow < StaminaBar.staminaMax) && (!isStop)) {
-                    StaminaBar.staminaNow += increaseStamina;
+                    StaminaBar.staminaNow += increaseStamina * Time.deltaTime * stam;
                     canRun = false;
                 }
                 fast_speed = 1f;
@@ -82,7 +92,7 @@ public class Player : MonoBehaviour
         } else {
             canRun = true;
             if ((StaminaBar.staminaNow < StaminaBar.staminaMax) && (!isStop) && !(PauseMenu.PauseGame)){
-                StaminaBar.staminaNow += increaseStamina;
+                StaminaBar.staminaNow += increaseStamina * Time.deltaTime * stam;
             }
 
             fast_speed = 1f;
