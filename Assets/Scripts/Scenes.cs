@@ -73,6 +73,7 @@ public class Scenes : MonoBehaviour
     [System.Serializable] struct Animation
     {
         public Animator[] animationsList; // список анимаций
+        public string[] animNum;
     }
 
     [System.Serializable] struct Achievements
@@ -120,12 +121,10 @@ public class Scenes : MonoBehaviour
         
         // Анимации
         if (acts[numAct].animations.animationsList.Length > 0) {
-            Debug.Log("Iphone");
             for (int i = 0; i < acts[numAct].animations.animationsList.Length; i++)
             {
-                acts[numAct].animations.animationsList[i].SetBool("isStart", true);
+                acts[numAct].animations.animationsList[i].SetBool(acts[numAct].animations.animNum[i], true);
             }
-            Debug.Log("asdasdasdasdasdasdasd");
         } else {
             canSkipA = true;
         }
@@ -155,13 +154,12 @@ public class Scenes : MonoBehaviour
         }
 
         if (acts[numAct].animations.animationsList.Length > 0) {
-            Debug.Log("Iphone");
             for (int i = 0; i < acts[numAct].animations.animationsList.Length; i++)
             {
-                if (!(acts[numAct].animations.animationsList[i].GetCurrentAnimatorStateInfo(0).IsName("Using"))) {
+                if (!(acts[numAct].animations.animationsList[i].GetCurrentAnimatorStateInfo(0).IsName(acts[numAct].animations.animNum[i]))) {
                     canSkipA = true;
                 }
-                acts[numAct].animations.animationsList[i].SetBool("isStart", false);
+                acts[numAct].animations.animationsList[i].SetBool(acts[numAct].animations.animNum[i], false);
             }
         }
 
