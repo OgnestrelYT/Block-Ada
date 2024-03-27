@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
 {
     [HideInInspector, SerializeField] public static bool PauseGame = false;
     [HideInInspector, SerializeField] public bool InMain = false;
+    [HideInInspector, SerializeField] public static bool canOpen;
     public GameObject pauseGameMenu;
     public GameObject pauseMain;
     public GameObject pauseSettings;
@@ -38,8 +39,7 @@ public class PauseMenu : MonoBehaviour
                     PlayerPrefs.Save();
                     Back();
                 }
-
-            } else {
+            } else if (canOpen) {
                 Pause();
             }
         }
