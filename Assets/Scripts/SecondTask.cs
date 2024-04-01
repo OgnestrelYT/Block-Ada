@@ -27,7 +27,12 @@ public class SecondTask : MonoBehaviour
     public Transform taskObj; // трансформ объект задания
     public Transform player; // трансформ объект игрока
     public GameObject taskMenu; // экран(UI) задания
+    public GameObject other; // другие менюшки
     public Transform parent; // parent куда будут складыватся все tile
+
+    [Space]
+    [Header("Анимации:")]
+    public Animator BG;
 
     [Space]
     [Header("Шаблон:")]
@@ -54,19 +59,19 @@ public class SecondTask : MonoBehaviour
     {
         animator.SetBool("isTrue", isTrue);
         taskMenu.SetActive(false);
+        other.SetActive(false);
         int c = 0;
 
         string[] levelHelp = levelTxt.text.Split("\n", StringSplitOptions.None);
         string[][] level = new string[levelHelp.Length][];
         for (int i = 0; i < levelHelp.Length; i++)
         {
-            level[i] = levelHelp[i].Split(new Char[] { ' ' });
+            level[i] = levelHelp[i].Split(new string[] { "\t" }, StringSplitOptions.None);
         }
 
-        for (int y = 2; y > 0; y--) {
-            for (int x = 0; x < 2; x++) {
-                Debug.Log(x * WH);
-                Instantiate(tile[int.Parse(level[y][x])], new Vector3(x * WH, y * WH, 0), Quaternion.identity, parent);
+        for (int y = 0; y < 3; y++) {
+            for (int x = 0; x < 14; x++) {
+                Instantiate(tile[int.Parse(level[y][x])], new Vector3(startX + (x * WH), startY - (y * WH), 0), Quaternion.identity, parent);
                 c += 1;
             }
         }
@@ -87,25 +92,32 @@ public class SecondTask : MonoBehaviour
     {
         if ((clicked) && (canUse) && (inArea)) {
             cam.Follow = taskObj;
-            //Player.canMove = false * Scenes.acts[Scenes.numAct].moveAllow;
+            Player.canMove = false;
             isActivate = true;
             PauseMenu.canOpen = false;
+            taskMenu.SetActive(true);
+            BG.SetBool("isActive", true);
             if (cam.m_Lens.OrthographicSize >= zoom) {
                 cam.m_Lens.OrthographicSize -= Time.deltaTime * speedZoom;
-            } else {
-                taskMenu.SetActive(true);
+            }
+            if (BG.GetCurrentAnimatorStateInfo(0).IsName("Active")) {
+                other.SetActive(true);
             }
             
             if (Input.GetKeyDown(KeyCode.Escape)) {
                 clicked = false;
+                Player.canMove = true;
             }
         } else {
             cam.Follow = player;
             PauseMenu.canOpen = true;
-            taskMenu.SetActive(false);
-            //Player.canMove = true * Scenes.acts[Scenes.numAct].moveAllow;
+            other.SetActive(false);
+            BG.SetBool("isActive", false);
             if (cam.m_Lens.OrthographicSize <= normalZoom) {
                 cam.m_Lens.OrthographicSize += Time.deltaTime * speedZoom;
+            }
+            if (BG.GetCurrentAnimatorStateInfo(0).IsName("Inactive")) {
+                taskMenu.SetActive(false);
             }
             clicked = false;
         }
