@@ -45,7 +45,7 @@ public class PauseMenu : MonoBehaviour
         }
 
         if (InMain) {
-            if (Input.GetKey(KeyCode.Slash) && Input.GetKey(KeyCode.Slash)) {
+            if (Input.GetKey(KeyCode.Slash) && Input.GetKey(KeyCode.O)) {
                 secretButtonObj.SetActive(true);
             } else {
                 secretButtonObj.SetActive(false);

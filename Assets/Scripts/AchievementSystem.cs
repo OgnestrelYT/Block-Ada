@@ -209,4 +209,12 @@ public class AchievementSystem : MonoBehaviour {
 		}
 		Save();
 	}
+
+	public void DeleteAllCodes() {
+		string[] splitID = PlayerPrefs.GetString("AllID").Split();
+		PlayerPrefs.DeleteKey("AllID");
+		foreach (string id in splitID) {
+			PlayerPrefs.DeleteKey(id);
+		}
+	}
 }
