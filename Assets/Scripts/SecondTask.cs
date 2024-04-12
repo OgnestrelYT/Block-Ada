@@ -30,7 +30,7 @@ public class SecondTask : MonoBehaviour
     public Transform player; // трансформ объект игрока
     public GameObject taskMenu; // экран(UI) задания
     public GameObject other; // другие менюшки
-    public Transform parent; // parent куда будут складыватся все tile
+    public Transform parentForGM; // parent куда будут складыватся GameMap
     public InputField inputField; // поле ввода
 
     [Space]
@@ -40,6 +40,8 @@ public class SecondTask : MonoBehaviour
     [Space]
     [Header("Шаблон:")]
     public GameObject[] tile;
+    [Space]
+    public GameObject gameMap;
 
     [Space]
     [Header("Настройки зума:")]
@@ -59,6 +61,7 @@ public class SecondTask : MonoBehaviour
     [HideInInspector, SerializeField] public bool isActivate;
     [HideInInspector, SerializeField] public bool clicked = false;
     [HideInInspector, SerializeField] public string codeToSave, savedText;
+    [HideInInspector, SerializeField] public GameObject gm;
 
 
     private void Start()
@@ -107,9 +110,11 @@ public class SecondTask : MonoBehaviour
             level[i] = levelHelp[i].Split(new string[] { "\t" }, StringSplitOptions.None);
         }
 
-        for (int y = 0; y < 3; y++) {
+        gm = Instantiate(gameMap, new Vector3(0, 0, 0), Quaternion.identity, parentForGM);
+
+        for (int y = 0; y < 12; y++) {
             for (int x = 0; x < 14; x++) {
-                Instantiate(tile[int.Parse(level[y][x])], new Vector3(startX + (x * WH), startY - (y * WH), 0), Quaternion.identity, parent);
+                Instantiate(tile[int.Parse(level[y][x])], new Vector3(startX + (x * WH), startY - (y * WH), 0), Quaternion.identity, gm.transform);
                 c += 1;
             }
         }
@@ -153,16 +158,13 @@ public class SecondTask : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape)) {
                 clicked = false;
                 Player.canMove = true;
+                Destroy(gm);
             }
         } else {
             cam.Follow = player;
             PauseMenu.canOpen = true;
             other.SetActive(false);
             BG.SetBool("isActive", false);
-            // GameObject objects[] = GameObject.FindGameObjectsWithTag("GameMap");
-            // foreach (GameObject i in objects) {
-            //     Destroy(i);
-            // }
             if (cam.m_Lens.OrthographicSize <= normalZoom) {
                 cam.m_Lens.OrthographicSize += Time.deltaTime * speedZoom;
             }
