@@ -125,16 +125,11 @@ public class SecondTask : MonoBehaviour
 
     public void Change() {
         codeToSave = inputField.text;
-        Checking(codeToSave);
-    }
-
-    public void Checking(string codeToSave) {
-        Debug.Log("Checking...");
+        CodeCompilating.Checking(codeToSave);
     }
 
     public void Save() {
         Debug.Log("Save");
-        Debug.Log(codeToSave);
         PlayerPrefs.SetString(ID, codeToSave);
         PlayerPrefs.Save();
     }
