@@ -42,6 +42,7 @@ public class SecondTask : MonoBehaviour
     public GameObject[] tile;
     [Space]
     public GameObject gameMap;
+    public GameObject carModel;
 
     [Space]
     [Header("Настройки зума:")]
@@ -53,7 +54,9 @@ public class SecondTask : MonoBehaviour
     [Header("Настройки gamemap:")]
     [SerializeField] public int startX;
     [SerializeField] public int startY;
-    [SerializeField] public int WH;
+    [SerializeField] public int xGamemap = 14;
+    [SerializeField] public int yGamemap = 12;
+    [SerializeField] public static int WH = 90;
 
     [Space]
     [HideInInspector, SerializeField] public string[] codes;
@@ -62,6 +65,7 @@ public class SecondTask : MonoBehaviour
     [HideInInspector, SerializeField] public bool clicked = false;
     [HideInInspector, SerializeField] public string codeToSave, savedText;
     [HideInInspector, SerializeField] public GameObject gm;
+    [HideInInspector, SerializeField] public static GameObject car;
 
 
     private void Start()
@@ -101,7 +105,7 @@ public class SecondTask : MonoBehaviour
             Save();
         }
 
-        int c = 0;
+        int c = 1;
 
         string[] levelHelp = levelTxt.text.Split("\n", StringSplitOptions.None);
         string[][] level = new string[levelHelp.Length][];
@@ -112,12 +116,18 @@ public class SecondTask : MonoBehaviour
 
         gm = Instantiate(gameMap, new Vector3(0, 0, 0), Quaternion.identity, parentForGM);
 
-        for (int y = 0; y < 12; y++) {
-            for (int x = 0; x < 14; x++) {
-                Instantiate(tile[int.Parse(level[y][x])], new Vector3(startX + (x * WH), startY - (y * WH), 0), Quaternion.identity, gm.transform);
-                c += 1;
+        for (int y = 0; y < yGamemap; y++) {
+            for (int x = 0; x < xGamemap; x++) {
+                if (int.Parse(level[y][x]) == 28) {
+                    c += 1;
+                } else {
+                    Instantiate(tile[int.Parse(level[y][x])], new Vector3(startX + (x * WH), startY - (y * WH), 0), Quaternion.identity, gm.transform);
+                }
             }
         }
+
+        car = Instantiate(carModel, new Vector3(startX + ((c % xGamemap - 1) * WH), startY - ((c / xGamemap) * WH), 0), Quaternion.identity, other.transform);
+
 
         PlayerPrefs.Save();
         Debug.Log(PlayerPrefs.GetString("AllID"));
@@ -154,6 +164,7 @@ public class SecondTask : MonoBehaviour
                 clicked = false;
                 Player.canMove = true;
                 Destroy(gm);
+                Destroy(car);
             }
         } else {
             cam.Follow = player;

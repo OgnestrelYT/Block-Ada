@@ -5149,12 +5149,14 @@ MonoBehaviour:
   - {fileID: 178980413928291967, guid: f9ec163a2f1d72d47a533a25d4eae759, type: 3}
   - {fileID: 2340205340278727115, guid: 1cfc92ca55a6fe4488a9f214ffafd851, type: 3}
   gameMap: {fileID: 113088254315079078, guid: eb3fc01cbc1428c47883da31e034c8a5, type: 3}
+  carModel: {fileID: 685199285170616152, guid: e2460e2cf3b98174d9dd32aedc313930, type: 3}
   zoom: 1.5
   normalZoom: 4.92
   speedZoom: 8
   startX: 705
   startY: 1035
-  WH: 90
+  xGamemap: 14
+  yGamemap: 12
   codes: []
   inArea: 0
   isActivate: 0
@@ -5310,6 +5312,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commandsTxt: {fileID: 4900000, guid: 019a9b574b3498a4ca3ed8f247fbc439, type: 3}
+  movement: 0.2
+  speed: 1
 --- !u!1 &906462244
 GameObject:
   m_ObjectHideFlags: 0
