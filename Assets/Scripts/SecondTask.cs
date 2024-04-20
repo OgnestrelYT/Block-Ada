@@ -32,6 +32,7 @@ public class SecondTask : MonoBehaviour
     public GameObject other; // другие менюшки
     public Transform parentForGM; // parent куда будут складыватся GameMap
     public InputField inputField; // поле ввода
+    public GameObject car;
 
     [Space]
     [Header("Анимации:")]
@@ -65,7 +66,6 @@ public class SecondTask : MonoBehaviour
     [HideInInspector, SerializeField] public bool clicked = false;
     [HideInInspector, SerializeField] public string codeToSave, savedText;
     [HideInInspector, SerializeField] public GameObject gm;
-    [HideInInspector, SerializeField] public static GameObject car;
     [HideInInspector, SerializeField] public static int c;
 
 
@@ -74,10 +74,6 @@ public class SecondTask : MonoBehaviour
         animator.SetBool("isTrue", isTrue);
         taskMenu.SetActive(false);
         other.SetActive(false);
-    }
-
-    public void OnEnter() {
-        isActivate = true;
     }
 
     public void OnExit() {
@@ -128,14 +124,13 @@ public class SecondTask : MonoBehaviour
             }
         }
 
-        car = Instantiate(carModel, new Vector3(startX + ((c % xGamemap - 1) * WH), startY - ((c / xGamemap) * WH), 0), Quaternion.identity, other.transform);
-
+        car.transform.position = new Vector3(startX + ((c % xGamemap - 1) * WH), startY - ((c / xGamemap) * WH), 0);
 
         PlayerPrefs.Save();
         Debug.Log(PlayerPrefs.GetString("AllID"));
     }
 
-    public static void StartLocation() {
+    public static void StartLocation(GameObject car) {
         car.transform.position = new Vector3(startX + ((c % xGamemap - 1) * WH), startY - ((c / xGamemap) * WH), 0);
     }
 
@@ -170,7 +165,6 @@ public class SecondTask : MonoBehaviour
                 clicked = false;
                 Player.canMove = true;
                 Destroy(gm);
-                Destroy(car);
             }
         } else {
             cam.Follow = player;

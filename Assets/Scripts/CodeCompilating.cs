@@ -9,6 +9,8 @@ public class CodeCompilating : MonoBehaviour
     [Header("Команды:")]
     public TextAsset commandsTxt; // txt с командами
 
+    public GameObject car;
+
     [Space]
     [Header("Команды:")]
     public float movement;
@@ -18,6 +20,10 @@ public class CodeCompilating : MonoBehaviour
     [HideInInspector, SerializeField] public static string[] code;
     [HideInInspector, SerializeField] public static bool isCorrect;
     [HideInInspector, SerializeField] public static int inCorrectLine;
+    [HideInInspector, SerializeField] public List<string> naprList;
+    [HideInInspector, SerializeField] public bool start;
+    [HideInInspector, SerializeField] public int ind;
+    [HideInInspector, SerializeField] public float per;
 
     void Start()
     {
@@ -31,7 +37,30 @@ public class CodeCompilating : MonoBehaviour
 
     void Update()
     {
-        
+        if (start) {
+            Debug.Log(per);
+            if (per >= SecondTask.WH) {
+                per = 0f;
+                if (ind+1 < naprList.Count) {
+                    ind += 1;
+                } else {
+                    ind = 0;
+                    per = 0f;
+                    start = false;
+                }
+            } else {
+                if (naprList[ind] == "up") {
+                    car.transform.position = Vector2.MoveTowards(car.transform.position, new Vector2(car.transform.position.x, car.transform.position.y + SecondTask.WH), speed * Time.deltaTime);
+                } else if (naprList[ind] == "down") {
+                    car.transform.position = Vector2.MoveTowards(car.transform.position, new Vector2(car.transform.position.x, car.transform.position.y - SecondTask.WH), speed * Time.deltaTime);
+                } else if (naprList[ind] == "left") {
+                    car.transform.position = Vector2.MoveTowards(car.transform.position, new Vector2(car.transform.position.x - SecondTask.WH, car.transform.position.y), speed * Time.deltaTime);
+                } else if (naprList[ind] == "right") {
+                    car.transform.position = Vector2.MoveTowards(car.transform.position, new Vector2(car.transform.position.x + SecondTask.WH, car.transform.position.y), speed * Time.deltaTime);
+                }
+                per += speed * Time.deltaTime;
+            }
+        }
     }
 
     public static void Checking(string codeToCheck) {
@@ -53,32 +82,16 @@ public class CodeCompilating : MonoBehaviour
         }
     }
 
-    public void Up() {
-        for (float i = 0f; i < SecondTask.WH; i += movement) {
-            SecondTask.car.transform.position += new Vector3(0, movement, 0) * speed;
-        }
-    }
-
-    public void Down() {
-        for (float i = 0f; i < SecondTask.WH; i += movement) {
-            SecondTask.car.transform.position -= new Vector3(0, movement, 0) * speed;
-        }
-    }
-
-    public void Left() {
-        for (float i = 0f; i < SecondTask.WH; i += movement) {
-            SecondTask.car.transform.position += new Vector3(movement, 0, 0) * speed;
-        }
-    }
-
-    public void Right() {
-        for (float i = 0f; i < SecondTask.WH; i += movement) {
-            SecondTask.car.transform.position -= new Vector3(movement, 0, 0) * speed;
-        }
+    public void StopCode() {
+        SecondTask.StartLocation(car);
     }
 
     public void StartCode() {
-        SecondTask.StartLocation();
+        ind = 0;
+        per = 0f;
+        naprList.Clear();
+        start = true;
+        SecondTask.StartLocation(car);
         if (isCorrect) {
             Debug.Log("Starting...");
             for (int i = 0; i < code.Length; i++) {
@@ -86,19 +99,28 @@ public class CodeCompilating : MonoBehaviour
                 line = line.Replace(" ", "");
                 if (line != "") {
                     if (Array.Exists(commands[0], c => c == line)) {
-                        Up();
+                        naprList.Add("up");
                     } else if (Array.Exists(commands[1], c => c == line)) {
-                        Down();
+                        naprList.Add("down");
                     } else if (Array.Exists(commands[2], c => c == line)) {
-                        Left();
+                        naprList.Add("left");
                     } else if (Array.Exists(commands[3], c => c == line)) {
-                        Right();
+                        naprList.Add("right");
                     }
                 }
             }
         } else {
             Debug.Log("Syntax error");
             Debug.Log(inCorrectLine);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Obstacle")
+        {
+            Debug.Log("Obstacle");
+            StopCode();
         }
     }
 }
