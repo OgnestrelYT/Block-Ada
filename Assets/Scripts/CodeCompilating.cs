@@ -78,6 +78,7 @@ public class CodeCompilating : MonoBehaviour
     }
 
     public void StartCode() {
+        SecondTask.StartLocation();
         if (isCorrect) {
             Debug.Log("Starting...");
             for (int i = 0; i < code.Length; i++) {

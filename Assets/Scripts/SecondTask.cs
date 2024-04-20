@@ -52,10 +52,10 @@ public class SecondTask : MonoBehaviour
 
     [Space]
     [Header("Настройки gamemap:")]
-    [SerializeField] public int startX;
-    [SerializeField] public int startY;
-    [SerializeField] public int xGamemap = 14;
-    [SerializeField] public int yGamemap = 12;
+    [SerializeField] public static int startX = 705;
+    [SerializeField] public static int startY = 1035;
+    [SerializeField] public static int xGamemap = 14;
+    [SerializeField] public static int yGamemap = 12;
     [SerializeField] public static int WH = 90;
 
     [Space]
@@ -66,6 +66,7 @@ public class SecondTask : MonoBehaviour
     [HideInInspector, SerializeField] public string codeToSave, savedText;
     [HideInInspector, SerializeField] public GameObject gm;
     [HideInInspector, SerializeField] public static GameObject car;
+    [HideInInspector, SerializeField] public static int c;
 
 
     private void Start()
@@ -78,6 +79,7 @@ public class SecondTask : MonoBehaviour
     public void OnEnter() {
         isActivate = true;
     }
+
     public void OnExit() {
         isActivate = false;
     }
@@ -105,7 +107,7 @@ public class SecondTask : MonoBehaviour
             Save();
         }
 
-        int c = 1;
+        c = 1;
 
         string[] levelHelp = levelTxt.text.Split("\n", StringSplitOptions.None);
         string[][] level = new string[levelHelp.Length][];
@@ -131,6 +133,10 @@ public class SecondTask : MonoBehaviour
 
         PlayerPrefs.Save();
         Debug.Log(PlayerPrefs.GetString("AllID"));
+    }
+
+    public static void StartLocation() {
+        car.transform.position = new Vector3(startX + ((c % xGamemap - 1) * WH), startY - ((c / xGamemap) * WH), 0);
     }
 
     public void Change() {
