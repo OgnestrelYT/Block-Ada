@@ -5347,7 +5347,10 @@ MonoBehaviour:
   commandsTxt: {fileID: 4900000, guid: 019a9b574b3498a4ca3ed8f247fbc439, type: 3}
   car: {fileID: 1542387181}
   movement: 1
-  speed: 1
+  speed: 100
+  naprList: []
+  ind: 0
+  per: 0
 --- !u!1 &906462244
 GameObject:
   m_ObjectHideFlags: 0
@@ -8279,6 +8282,9 @@ GameObject:
   - component: {fileID: 1542387182}
   - component: {fileID: 1542387184}
   - component: {fileID: 1542387183}
+  - component: {fileID: 1542387185}
+  - component: {fileID: 1542387186}
+  - component: {fileID: 1542387187}
   m_Layer: 5
   m_Name: car
   m_TagString: Untagged
@@ -8344,6 +8350,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542387181}
   m_CullTransparentMesh: 1
+--- !u!61 &1542387185
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542387181}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.1521301, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 80.99017, y: 64.71}
+  m_EdgeRadius: 0
+--- !u!50 &1542387186
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542387181}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!114 &1542387187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542387181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 315c654d4814e4d4a97fcd3b7220d8b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  car: {fileID: 1542387181}
 --- !u!1 &1567868009
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ public class CodeCompilating : MonoBehaviour
     [HideInInspector, SerializeField] public static bool isCorrect;
     [HideInInspector, SerializeField] public static int inCorrectLine;
     [HideInInspector, SerializeField] public List<string> naprList;
-    [HideInInspector, SerializeField] public bool start;
+    [HideInInspector, SerializeField] public static bool start;
     [HideInInspector, SerializeField] public int ind;
     [HideInInspector, SerializeField] public float per;
 
@@ -38,7 +38,6 @@ public class CodeCompilating : MonoBehaviour
     void Update()
     {
         if (start) {
-            Debug.Log(per);
             if (per >= SecondTask.WH) {
                 per = 0f;
                 if (ind+1 < naprList.Count) {
@@ -83,6 +82,7 @@ public class CodeCompilating : MonoBehaviour
     }
 
     public void StopCode() {
+        start = false;
         SecondTask.StartLocation(car);
     }
 
@@ -112,15 +112,6 @@ public class CodeCompilating : MonoBehaviour
         } else {
             Debug.Log("Syntax error");
             Debug.Log(inCorrectLine);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Obstacle")
-        {
-            Debug.Log("Obstacle");
-            StopCode();
         }
     }
 }

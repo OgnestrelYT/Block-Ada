@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Car : MonoBehaviour
 {
+    public GameObject car;
 
     // Start is called before the first frame update
     void Start()
@@ -17,27 +18,12 @@ public class Car : MonoBehaviour
         
     }
 
-    public static void Up(GameObject car, float movement, float speed) {
-        for (float i = 0f; i < SecondTask.WH; i += speed * Time.deltaTime) {
-            car.transform.position = Vector2.MoveTowards(car.transform.position, new Vector2(car.transform.position.x, car.transform.position.y + SecondTask.WH), speed * Time.deltaTime);
-        }
-    }
-
-    public static void Down(GameObject car, float movement, float speed) {
-        for (float i = 0f; i < SecondTask.WH; i += movement) {
-            car.transform.position -= new Vector3(0, movement, 0) * speed;
-        }
-    }
-
-    public static void Left(GameObject car, float movement, float speed) {
-        for (float i = 0f; i < SecondTask.WH; i += movement) {
-            car.transform.position += new Vector3(movement, 0, 0) * speed;
-        }
-    }
-
-    public static void Right(GameObject car, float movement, float speed) {
-        for (float i = 0f; i < SecondTask.WH; i += movement) {
-            car.transform.position -= new Vector3(movement, 0, 0) * speed;
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Obstacle") {
+            CodeCompilating.start = false;
+        } else if (other.tag == "Finish") {
+            Debug.Log("Finish");
         }
     }
 }
