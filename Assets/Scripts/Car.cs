@@ -21,6 +21,7 @@ public class Car : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Obstacle") {
+            CodeCompilating.isObstacle = true;
             CodeCompilating.start = false;
         } else if (other.tag == "Finish") {
             Debug.Log("Finish");

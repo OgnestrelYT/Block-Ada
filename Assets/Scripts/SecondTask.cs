@@ -74,6 +74,8 @@ public class SecondTask : MonoBehaviour
         animator.SetBool("isTrue", isTrue);
         taskMenu.SetActive(false);
         other.SetActive(false);
+        codeToSave = inputField.text;
+        CodeCompilating.Checking(codeToSave);
     }
 
     public void OnExit() {
@@ -131,6 +133,10 @@ public class SecondTask : MonoBehaviour
     }
 
     public static void StartLocation(GameObject car) {
+        CodeCompilating.isObstacle = false;
+        Vector3 rotate = car.transform.eulerAngles;
+        rotate.z = 0;
+        car.transform.rotation = Quaternion.Euler(rotate);
         car.transform.position = new Vector3(startX + ((c % xGamemap - 1) * WH), startY - ((c / xGamemap) * WH), 0);
     }
 
