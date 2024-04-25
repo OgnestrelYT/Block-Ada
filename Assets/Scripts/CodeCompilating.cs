@@ -58,7 +58,6 @@ public class CodeCompilating : MonoBehaviour
                         start = false;
                     }
                 } else {
-                    Debug.Log((float)Math.Round(car.transform.rotation.eulerAngles.z));
                     if (naprList[ind] == "up") {
                         if ((float)Math.Round(car.transform.rotation.eulerAngles.z) == 90f) {
                             car.transform.position = Vector2.MoveTowards(car.transform.position, new Vector2(car.transform.position.x, car.transform.position.y + SecondTask.WH), speed * Time.deltaTime);

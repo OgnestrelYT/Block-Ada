@@ -75,7 +75,6 @@ public class SecondTask : MonoBehaviour
         taskMenu.SetActive(false);
         other.SetActive(false);
         codeToSave = inputField.text;
-        CodeCompilating.Checking(codeToSave);
     }
 
     public void OnExit() {
@@ -120,6 +119,7 @@ public class SecondTask : MonoBehaviour
             for (int x = 0; x < xGamemap; x++) {
                 if (int.Parse(level[y][x]) == 28) {
                     c += 1;
+                    Instantiate(tile[27], new Vector3(startX + (x * WH), startY - (y * WH), 0), Quaternion.identity, gm.transform);
                 } else {
                     Instantiate(tile[int.Parse(level[y][x])], new Vector3(startX + (x * WH), startY - (y * WH), 0), Quaternion.identity, gm.transform);
                 }
