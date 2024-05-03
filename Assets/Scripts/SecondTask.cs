@@ -89,6 +89,8 @@ public class SecondTask : MonoBehaviour
     }
 
     public void OnActivate() {
+        CodeCompilating.activeScene = true;
+
         if (!PlayerPrefs.HasKey("AllID")) {
             PlayerPrefs.SetString("AllID", ID);
         }
@@ -173,6 +175,7 @@ public class SecondTask : MonoBehaviour
                 Destroy(gm);
             }
         } else {
+            CodeCompilating.activeScene = false;
             cam.Follow = player;
             PauseMenu.canOpen = true;
             other.SetActive(false);

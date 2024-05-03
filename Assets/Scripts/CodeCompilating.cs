@@ -16,6 +16,7 @@ public class CodeCompilating : MonoBehaviour
     public GameObject cor;
     public GameObject inCor;
     public Text errorText;
+    public InputField inputField; // поле ввода
 
     [Space]
     [Header("Скорости:")]
@@ -32,6 +33,7 @@ public class CodeCompilating : MonoBehaviour
     [HideInInspector, SerializeField] public static bool isObstacle = false;
     [HideInInspector, SerializeField] public int ind;
     [HideInInspector, SerializeField] public float per;
+    [HideInInspector, SerializeField] public static bool activeScene;
 
     void Start()
     {
@@ -46,8 +48,17 @@ public class CodeCompilating : MonoBehaviour
 
     void Update()
     {
+        if (!activeScene) {
+            start = false;
+            ind = 0;
+            naprList.Clear();
+            SecondTask.StartLocation(car);
+        }
+
+
         if (isCorrect) {
             if (start) {
+                inputField.interactable = false;
                 if (per >= SecondTask.WH) {
                     per = 0f;
                     if (ind+1 < naprList.Count) {
@@ -104,6 +115,8 @@ public class CodeCompilating : MonoBehaviour
                         }
                     }
                 }
+            } else {
+                inputField.interactable = true;
             }
 
             if (isObstacle) {
@@ -144,6 +157,8 @@ public class CodeCompilating : MonoBehaviour
 
     public void StopCode() {
         start = false;
+        ind = 0;
+        naprList.Clear();
         SecondTask.StartLocation(car);
     }
 

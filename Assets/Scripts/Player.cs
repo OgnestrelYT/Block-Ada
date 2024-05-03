@@ -70,9 +70,9 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
-                    // if ((StaminaBar.staminaNow < StaminaBar.staminaMax) && (!isStop)) {
-                    //     StaminaBar.staminaNow += increaseStamina * Time.deltaTime * stam;
-                    // }
+                    if ((StaminaBar.staminaNow < StaminaBar.staminaMax) && (!isStop)) {
+                        StaminaBar.staminaNow += increaseStamina * Time.deltaTime * stam;
+                    }
                     animator.SetBool("IsRun", false);
                 }
             }
