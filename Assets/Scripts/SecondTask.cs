@@ -119,9 +119,9 @@ public class SecondTask : MonoBehaviour
 
         for (int y = 0; y < yGamemap; y++) {
             for (int x = 0; x < xGamemap; x++) {
-                if (int.Parse(level[y][x]) == 28) {
+                if (int.Parse(level[y][x]) == 99) {
                     c += 1;
-                    Instantiate(tile[27], new Vector3(startX + (x * WH), startY - (y * WH), 0), Quaternion.identity, gm.transform);
+                    Instantiate(tile[0], new Vector3(startX + (x * WH), startY - (y * WH), 0), Quaternion.identity, gm.transform);
                 } else {
                     Instantiate(tile[int.Parse(level[y][x])], new Vector3(startX + (x * WH), startY - (y * WH), 0), Quaternion.identity, gm.transform);
                 }

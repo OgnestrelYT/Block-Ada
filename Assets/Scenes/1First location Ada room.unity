@@ -5297,7 +5297,7 @@ MonoBehaviour:
   car: {fileID: 1542387181}
   BG: {fileID: 1865999322}
   tile:
-  - {fileID: 2942903007238357539, guid: a1b1aece5a0725349839224a993141c3, type: 3}
+  - {fileID: 2340205340278727115, guid: 1cfc92ca55a6fe4488a9f214ffafd851, type: 3}
   - {fileID: 4527948592668862139, guid: 36921a13ca36e274c84c1f452906bdb6, type: 3}
   - {fileID: 5157809410255953336, guid: c5ec8d75e232c464bb9712310a290604, type: 3}
   - {fileID: 1972724711550266792, guid: 424f6b59fb1191247852c0ce3e4435bb, type: 3}
@@ -5315,16 +5315,6 @@ MonoBehaviour:
   - {fileID: 8269979629316166118, guid: e207f1623a05df545b0d393c3b945db4, type: 3}
   - {fileID: 6104584706291667362, guid: c218482329edfdb468cffc9445cecf0d, type: 3}
   - {fileID: 3424184438914376419, guid: 92c23d8882bfcdb47800112a2cf4774e, type: 3}
-  - {fileID: 948590886319489090, guid: 736c3df3e5877a04dab92582acfb7e62, type: 3}
-  - {fileID: 7798623637661166246, guid: bf1f8056544fa8a45bce263ab26b66ef, type: 3}
-  - {fileID: 8937697496303023138, guid: fe435f3342a7c4c4095472a6da871d68, type: 3}
-  - {fileID: 7417261248354177174, guid: ef72aff4d094b8342a959b617e44588b, type: 3}
-  - {fileID: 3220239305322357521, guid: 53757f5cbe5f87b4e89e114048e303de, type: 3}
-  - {fileID: 183769190343609582, guid: 327354842c7c52d42ae420dff6bf38a3, type: 3}
-  - {fileID: 6848091731020144041, guid: 759e94b0dac90c442a25f714ce6c0983, type: 3}
-  - {fileID: 5446171614040049997, guid: 5ef39e5122d3d2f44afc97014f832d1a, type: 3}
-  - {fileID: 178980413928291967, guid: f9ec163a2f1d72d47a533a25d4eae759, type: 3}
-  - {fileID: 2340205340278727115, guid: 1cfc92ca55a6fe4488a9f214ffafd851, type: 3}
   gameMap: {fileID: 113088254315079078, guid: eb3fc01cbc1428c47883da31e034c8a5, type: 3}
   carModel: {fileID: 685199285170616152, guid: e2460e2cf3b98174d9dd32aedc313930, type: 3}
   zoom: 1.5
@@ -8554,7 +8544,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a291dc43491bfe64bbdd7e350793093c, type: 3}
+  m_Sprite: {fileID: 1347600142, guid: 36b122a5c4631dc45a7328140264da88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8585,7 +8575,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -8596,7 +8586,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 80, y: 17}
+  m_Size: {x: 60, y: 17}
   m_EdgeRadius: 0
 --- !u!50 &1542387186
 Rigidbody2D:
