@@ -32,8 +32,10 @@ public class CodeCompilating : MonoBehaviour
     [HideInInspector, SerializeField] public static bool start;
     [HideInInspector, SerializeField] public static bool isObstacle = false;
     [HideInInspector, SerializeField] public int ind;
+    [HideInInspector, SerializeField] public int n;
     [HideInInspector, SerializeField] public float per;
     [HideInInspector, SerializeField] public static bool activeScene;
+    [HideInInspector, SerializeField] public static bool finished = false;
 
     void Start()
     {
@@ -48,6 +50,12 @@ public class CodeCompilating : MonoBehaviour
 
     void Update()
     {
+        if (finished) {
+            errorText.text = "Finished!!!";
+            SecondTask.isTrue = true;
+        }
+
+
         if (!activeScene) {
             start = false;
             ind = 0;
@@ -141,21 +149,37 @@ public class CodeCompilating : MonoBehaviour
         isCorrect = true;
         for (int i = 0; i < code.Length; i++) {
             bool found = false;
-            for (int j = 0; j < commands.Length; j++)  {
-                if (Array.Exists(commands[j], c => c == code[i].ToLower().Replace(" ", ""))) {
-                    found = true;
+            string[] com = code[i].Split(" ");
+            if (com.Length != 0) {
+                if (com.Length == 2) {
+                    if (!int.TryParse(com[1], out int asd)) {
+                        inCorrectLine = i+1;
+                        isCorrect = false;
+                        break;
+                    }
+                } else if ((com.Length > 2)) {
+                    inCorrectLine = i+1;
+                    isCorrect = false;
                     break;
                 }
-            } 
-            if (!found) {
-                inCorrectLine = i+1;
-                isCorrect = false;
-                break;
+                
+                for (int j = 0; j < commands.Length; j++)  {
+                    if (Array.Exists(commands[j], c => c == com[0].ToLower().Replace(" ", ""))) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    inCorrectLine = i+1;
+                    isCorrect = false;
+                    break;
+                }
             }
         }
     }
 
     public void StopCode() {
+        finished = false;
         start = false;
         ind = 0;
         naprList.Clear();
@@ -163,6 +187,7 @@ public class CodeCompilating : MonoBehaviour
     }
 
     public void StartCode() {
+        finished = false;
         ind = 0;
         per = 0f;
         naprList.Clear();
@@ -172,16 +197,30 @@ public class CodeCompilating : MonoBehaviour
             Debug.Log("Starting...");
             for (int i = 0; i < code.Length; i++) {
                 string line = code[i].ToLower();
-                line = line.Replace(" ", "");
-                if (line != "") {
-                    if (Array.Exists(commands[0], c => c == line)) {
-                        naprList.Add("up");
-                    } else if (Array.Exists(commands[1], c => c == line)) {
-                        naprList.Add("down");
-                    } else if (Array.Exists(commands[2], c => c == line)) {
-                        naprList.Add("left");
-                    } else if (Array.Exists(commands[3], c => c == line)) {
-                        naprList.Add("right");
+                string[] com = line.Split(" ");
+                if (com.Length > 0) {
+                    if (com.Length == 2) {
+                        bool numb = int.TryParse(com[1], out n);
+                    } else {
+                        n = 1;
+                    }
+
+                    if (Array.Exists(commands[0], c => c == com[0])) {
+                        for (int b = 0; b < n; b++) {
+                            naprList.Add("up");
+                        }
+                    } else if (Array.Exists(commands[1], c => c == com[0])) {
+                        for (int b = 0; b < n; b++) {
+                            naprList.Add("down");
+                        }
+                    } else if (Array.Exists(commands[2], c => c == com[0])) {
+                        for (int b = 0; b < n; b++) {
+                            naprList.Add("left");
+                        }
+                    } else if (Array.Exists(commands[3], c => c == com[0])) {
+                        for (int b = 0; b < n; b++) {
+                            naprList.Add("right");
+                        }
                     }
                 }
             }

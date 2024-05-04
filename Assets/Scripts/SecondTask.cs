@@ -20,7 +20,7 @@ public class SecondTask : MonoBehaviour
 
     [Space]
     [Header("Разрешения/начальные константы:")]
-    public bool isTrue = false;
+    public static bool isTrue = false;
     public bool canUse = true;
 
     [Space]
@@ -32,7 +32,8 @@ public class SecondTask : MonoBehaviour
     public GameObject other; // другие менюшки
     public Transform parentForGM; // parent куда будут складыватся GameMap
     public InputField inputField; // поле ввода
-    public GameObject car;
+    public GameObject car; // робот
+    public GameObject helpMenu; // меню помощи
 
     [Space]
     [Header("Анимации:")]
@@ -71,10 +72,19 @@ public class SecondTask : MonoBehaviour
 
     private void Start()
     {
+        if (!PlayerPrefs.HasKey("isFirst")) {
+            PlayerPrefs.SetInt("isFirst", 1);
+        }
+
         animator.SetBool("isTrue", isTrue);
         taskMenu.SetActive(false);
         other.SetActive(false);
+        helpMenu.SetActive(false);
         codeToSave = inputField.text;
+    }
+
+    public void OnEnter() {
+        isActivate = true;
     }
 
     public void OnExit() {
@@ -89,6 +99,10 @@ public class SecondTask : MonoBehaviour
     }
 
     public void OnActivate() {
+        if (PlayerPrefs.GetInt("isFirst") == 1) {
+            helpMenu.SetActive(true);
+        }
+
         CodeCompilating.activeScene = true;
 
         if (!PlayerPrefs.HasKey("AllID")) {
@@ -153,6 +167,11 @@ public class SecondTask : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    public void Close() {
+        PlayerPrefs.SetInt("isFirst", 0);
+        helpMenu.SetActive(false);
+    }
+
     private void Update()
     {
         if ((clicked) && (canUse) && (inArea)) {
@@ -189,6 +208,7 @@ public class SecondTask : MonoBehaviour
             clicked = false;
         }
 
+        animator.SetBool("isTrue", isTrue);
         animator.SetBool("isActivate", isActivate);
     }
 
@@ -209,4 +229,8 @@ public class SecondTask : MonoBehaviour
             inArea = false;
         }
     }
+
+    public void Firstly() {
+		PlayerPrefs.SetInt("isFirst", 1);
+	}
 }

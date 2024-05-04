@@ -5,6 +5,7 @@ using UnityEngine;
 public class Car : MonoBehaviour
 {
     public GameObject car;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,7 @@ public class Car : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -24,7 +25,8 @@ public class Car : MonoBehaviour
             CodeCompilating.isObstacle = true;
             CodeCompilating.start = false;
         } else if (other.tag == "Finish") {
-            Debug.Log("Finish");
+            CodeCompilating.finished = true;
+            animator.SetBool("isActive", true);
         }
     }
 }

@@ -13,6 +13,7 @@ public class DialogueWindow : MonoBehaviour
     [HideInInspector, SerializeField] public string[] _messages;
     [SerializeField] public Button skipButton;
     [HideInInspector] public int numDialog = 0;
+    [HideInInspector] public bool pressed = false;
     public bool isActive { get; set; }
 
 
@@ -40,6 +41,18 @@ public class DialogueWindow : MonoBehaviour
         _text.text = messages[numDialog];
 		Show();
 	}
+
+    
+    void Update()
+    {
+        if (((Input.GetKey(KeyCode.Space)) || (Input.GetKey(KeyCode.Return))) && (!pressed)) {
+            NextDialog();
+            pressed = true;
+            Debug.Log("yf;fk");
+        } else if ((Input.GetKeyUp(KeyCode.Space)) || (Input.GetKeyUp(KeyCode.Return))) {
+            pressed = false;
+        }
+    }
     
 
     public void NextDialog()
