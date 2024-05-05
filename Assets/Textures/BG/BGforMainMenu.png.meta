@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9af822c64937a2c4fa38c1e71b5c7860
+guid: 3903f31daa8a5ef4a835856dd91dc927
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,7 +101,55 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -116,13 +164,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: animationMainMenu_0
+      name: BGforMainMenu_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 180
-        width: 160
-        height: 90
+        y: 496
+        width: 440
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +178,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 251b2d0fdb087cc43b0e51fc04b5c43a
-      internalID: -317615368
+      spriteID: 10f97863e18880049a03f90fe163497c
+      internalID: 923775704
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animationMainMenu_1
+      name: BGforMainMenu_1
       rect:
         serializedVersion: 2
-        x: 160
-        y: 180
-        width: 160
-        height: 90
+        x: 440
+        y: 496
+        width: 440
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,20 +199,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93ecc970c1d9edf43998bfa8ab4d6ed8
-      internalID: -249805308
+      spriteID: 5312b7a86793b344c8d72abcb06d2ff6
+      internalID: 689774880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animationMainMenu_2
+      name: BGforMainMenu_2
       rect:
         serializedVersion: 2
-        x: 320
-        y: 180
-        width: 160
-        height: 90
+        x: 880
+        y: 496
+        width: 440
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +220,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acd19d4b1d67e274eb3bb89bc3c5b374
-      internalID: 2123454729
+      spriteID: 5c9534f131b23784396ab0a90b802310
+      internalID: -1401793643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animationMainMenu_3
+      name: BGforMainMenu_3
       rect:
         serializedVersion: 2
-        x: 480
-        y: 180
-        width: 160
-        height: 90
+        x: 1320
+        y: 496
+        width: 440
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,104 +241,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36d3b9b346c6b4941adcaecbf22696e5
-      internalID: -731246015
+      spriteID: 45b6abd6c892b4640aa003cc1b0c801e
+      internalID: 1252517465
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animationMainMenu_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 90
-        width: 160
-        height: 90
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fbb13927dfefc1149805d3801533bb92
-      internalID: -1469244382
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animationMainMenu_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 90
-        width: 160
-        height: 90
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6e0da476762556049a9462c4e90be57c
-      internalID: 1379702770
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animationMainMenu_6
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 90
-        width: 160
-        height: 90
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 98143b03352e31b4c82f07dad62e6b1e
-      internalID: -709874537
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animationMainMenu_7
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 90
-        width: 160
-        height: 90
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d98d3bed951ce141957bc5d813b3325
-      internalID: -823757555
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animationMainMenu_8
+      name: BGforMainMenu_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 160
-        height: 90
+        y: 248
+        width: 440
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,20 +262,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a4e175967a9b744b80f5fccd8a86ece
-      internalID: -510107767
+      spriteID: 612025abaa96b2d49ba60f4619ff10f2
+      internalID: -578456856
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animationMainMenu_9
+      name: BGforMainMenu_5
       rect:
         serializedVersion: 2
-        x: 160
-        y: 0
-        width: 160
-        height: 90
+        x: 440
+        y: 248
+        width: 440
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,20 +283,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d3bc79f5caed16468bc669bffb7fa96
-      internalID: -1912776684
+      spriteID: dab3f9bde0d1c8848a799ce84d428efb
+      internalID: 1732137027
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animationMainMenu_10
+      name: BGforMainMenu_6
       rect:
         serializedVersion: 2
-        x: 320
-        y: 0
-        width: 160
-        height: 90
+        x: 880
+        y: 248
+        width: 440
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,20 +304,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 610e3294382d5f74cb070a9fba965dd6
-      internalID: 1410261290
+      spriteID: 227e7c4f64b86a546b8aca3904b6be91
+      internalID: -172643214
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animationMainMenu_11
+      name: BGforMainMenu_7
       rect:
         serializedVersion: 2
-        x: 480
-        y: 0
-        width: 160
-        height: 90
+        x: 1320
+        y: 248
+        width: 440
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -361,8 +325,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2f1a849f54d2b94b975958795045770
-      internalID: -1835667761
+      spriteID: b06e1cfc000026b4eb279bca8f3478a0
+      internalID: -1618926687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BGforMainMenu_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 440
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb182b4232f6fc943a332a4c4aa24139
+      internalID: 1701034462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BGforMainMenu_9
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 0
+        width: 440
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1acebe07b89fccd4db8cebcba82d9a19
+      internalID: 1944441917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BGforMainMenu_10
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 440
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5f2339459ded4b4799ce0a7956270cb
+      internalID: -1152111739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BGforMainMenu_11
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 0
+        width: 440
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40b938ae880ceed47b17cd6619e72ca3
+      internalID: -1163545874
       vertices: []
       indices: 
       edges: []
@@ -378,18 +426,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      animationMainMenu_3: -731246015
-      animationMainMenu_8: -510107767
-      animationMainMenu_6: -709874537
-      animationMainMenu_7: -823757555
-      animationMainMenu_9: -1912776684
-      animationMainMenu_1: -249805308
-      animationMainMenu_10: 1410261290
-      animationMainMenu_0: -317615368
-      animationMainMenu_5: 1379702770
-      animationMainMenu_11: -1835667761
-      animationMainMenu_4: -1469244382
-      animationMainMenu_2: 2123454729
+      BGforMainMenu_4: -578456856
+      BGforMainMenu_5: 1732137027
+      BGforMainMenu_7: -1618926687
+      BGforMainMenu_11: -1163545874
+      BGforMainMenu_3: 1252517465
+      BGforMainMenu_1: 689774880
+      BGforMainMenu_9: 1944441917
+      BGforMainMenu_0: 923775704
+      BGforMainMenu_2: -1401793643
+      BGforMainMenu_6: -172643214
+      BGforMainMenu_8: 1701034462
+      BGforMainMenu_10: -1152111739
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

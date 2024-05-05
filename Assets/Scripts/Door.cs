@@ -15,8 +15,10 @@ public class Door : MonoBehaviour
     [Header("Объекты:")]
     [SerializeField] public GameObject buttonPref; // префаб кнопки
     [SerializeField] public Transform parent; // объект кнопки
+
     [SerializeField, HideInInspector] public Button button; // кнопка
     [SerializeField, HideInInspector] public GameObject buttonObj; // объект кнопки
+    [SerializeField, HideInInspector] public static bool interactionAllow; // можно ли открывать
 
     void Start()
     {
@@ -34,7 +36,7 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player") {
+        if ((other.tag == "Player") && (interactionAllow)) {
             buttonObj.SetActive(true);
         }
     }

@@ -163,6 +163,8 @@ public class Scenes : MonoBehaviour
             }
         }
 
+        Door.interactionAllow = acts[numAct].interactionAllow;
+
         if ((canSkipD) && (canSkipTime) && (canSkipA) && (canSkipT) && (numAct < countActs - 1)) {
             timer = 0f;
             black.SetActive(false);

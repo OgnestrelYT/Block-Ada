@@ -6,18 +6,37 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    [HideInInspector, SerializeField] public static bool PauseGame = false;
-    [HideInInspector, SerializeField] public bool InMain = false;
-    [HideInInspector, SerializeField] public static bool canOpen;
+    [Space]
+    [Header("Сцены:")]
+    public string mainMenu = "Main menu";
+
+    [Space]
+    [Header("Объекты:")]
     public GameObject pauseGameMenu;
     public GameObject pauseMain;
     public GameObject pauseSettings;
     public GameObject pauseAchievements;
+    public GameObject areYouSure;
 
+    [Space]
+    [Header("Кнопки:")]
+    public Button resumeButton;
+    public Button settingsButton;
+    public Button achievmentsButton;
+    public Button exitButton;
+    public Button yesButton;
+    public Button noButton;
+
+    [Space]
     [Header("Secret:")]
     public GameObject secretButtonObj;
+    public Button secretButton;
     public GameObject pauseSecret;
 
+
+    [HideInInspector, SerializeField] public static bool PauseGame = false;
+    [HideInInspector, SerializeField] public bool InMain = false;
+    [HideInInspector, SerializeField] public static bool canOpen;
     
 
     void Start(){
@@ -26,6 +45,14 @@ public class PauseMenu : MonoBehaviour
 
         secretButtonObj.SetActive(false);
         pauseSecret.SetActive(false);
+
+        resumeButton.onClick.AddListener(Resume);
+        settingsButton.onClick.AddListener(Settings);
+        achievmentsButton.onClick.AddListener(Achievements);
+        exitButton.onClick.AddListener(Exit);
+        yesButton.onClick.AddListener(YesB);
+        noButton.onClick.AddListener(NoB);
+        secretButton.onClick.AddListener(Secret);
     }
 
     void Update()
@@ -90,7 +117,7 @@ public class PauseMenu : MonoBehaviour
         PauseGame = true;
     }
 
-    // Вспомогательные кнопки
+
     public void Secret(){
         Time.timeScale = 1f;
         InMain = false;
@@ -99,11 +126,21 @@ public class PauseMenu : MonoBehaviour
         PauseGame = true;
     }
 
-    public void Exit(){
-        PlayerPrefs.Save();
-        LoadingBar.SceneName = "Main menu";
+    public void Exit()
+    {
+        areYouSure.SetActive(true);
+    }
+
+    public void YesB()
+    {
+        areYouSure.SetActive(false);
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Loading Scene");
+        SceneManager.LoadScene(mainMenu);
+    }
+
+    public void NoB()
+    {
+        areYouSure.SetActive(false);
     }
 
     public void Back(){
