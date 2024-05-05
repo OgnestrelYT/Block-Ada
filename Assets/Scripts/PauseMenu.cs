@@ -74,6 +74,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Settings(){
+        Time.timeScale = 1f;
         InMain = false;
         pauseMain.SetActive(false);
         pauseSettings.SetActive(true);
@@ -81,6 +82,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Achievements(){
+        Time.timeScale = 1f;
         InMain = false;
         pauseMain.SetActive(false);
         AchievementSystem.use.ShowAchievementList(true);
@@ -90,6 +92,7 @@ public class PauseMenu : MonoBehaviour
 
     // Вспомогательные кнопки
     public void Secret(){
+        Time.timeScale = 1f;
         InMain = false;
         pauseMain.SetActive(false);
         pauseSecret.SetActive(true);
@@ -104,6 +107,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Back(){
+        Time.timeScale = 0f;
         InMain = true;
         pauseAchievements.SetActive(false);
         if (AchievementSystem.isActive) {
