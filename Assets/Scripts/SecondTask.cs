@@ -72,8 +72,24 @@ public class SecondTask : MonoBehaviour
 
     private void Start()
     {
+        Car.ID = ID;
         if (!PlayerPrefs.HasKey("isFirst")) {
             PlayerPrefs.SetInt("isFirst", 1);
+        }
+
+        if (!PlayerPrefs.HasKey("AllIDbool")) {
+            PlayerPrefs.SetString("AllIDbool", ID);
+        }
+
+        if (PlayerPrefs.HasKey(ID + "bool")) {
+            if (PlayerPrefs.GetInt(ID + "bool") == 1) {
+                isTrue = true;
+            } else {
+                isTrue = false;
+            }
+        } else {
+            PlayerPrefs.SetString("AllIDbool", PlayerPrefs.GetString("AllIDbool") + "|" + ID);
+            PlayerPrefs.SetInt(ID + "bool", 0);
         }
 
         animator.SetBool("isTrue", isTrue);
@@ -81,6 +97,8 @@ public class SecondTask : MonoBehaviour
         other.SetActive(false);
         helpMenu.SetActive(false);
         codeToSave = inputField.text;
+
+        PlayerPrefs.Save();
     }
 
     public void OnEnter() {
@@ -202,9 +220,7 @@ public class SecondTask : MonoBehaviour
             if (cam.m_Lens.OrthographicSize <= normalZoom) {
                 cam.m_Lens.OrthographicSize += Time.deltaTime * speedZoom;
             }
-            if (BG.GetCurrentAnimatorStateInfo(0).IsName("Inactive")) {
-                taskMenu.SetActive(false);
-            }
+            taskMenu.SetActive(false);
             clicked = false;
         }
 
@@ -232,5 +248,13 @@ public class SecondTask : MonoBehaviour
 
     public void Firstly() {
 		PlayerPrefs.SetInt("isFirst", 1);
+	}
+
+    public void DeleteAllCodes() {
+		string[] splitID = PlayerPrefs.GetString("AllID").Split();
+		PlayerPrefs.DeleteKey("AllID");
+		foreach (string id in splitID) {
+			PlayerPrefs.DeleteKey(id);
+		}
 	}
 }

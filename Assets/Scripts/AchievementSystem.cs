@@ -210,11 +210,21 @@ public class AchievementSystem : MonoBehaviour {
 		Save();
 	}
 
-	public void DeleteAllCodes() {
-		string[] splitID = PlayerPrefs.GetString("AllID").Split();
-		PlayerPrefs.DeleteKey("AllID");
-		foreach (string id in splitID) {
-			PlayerPrefs.DeleteKey(id);
-		}
+	public void AchieveToZero(int i)
+	{
+		achievements[i].currentValue = 0;
+		achievements[i].isAchieved = false;
+		Save();
 	}
+
+	public void ClearAllSolvedSecondTasks() {
+        string[] splitID = PlayerPrefs.GetString("AllIDbool").Split();
+        Debug.Log(PlayerPrefs.GetString("AllIDbool"));
+		PlayerPrefs.DeleteKey("AllIDbool");
+		foreach (string id in splitID) {
+			PlayerPrefs.DeleteKey(id + "bool");
+            AchieveToZero(1);
+		}
+		SecondTask.isTrue = false;
+    }
 }
