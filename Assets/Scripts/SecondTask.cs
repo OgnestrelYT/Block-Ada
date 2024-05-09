@@ -79,17 +79,17 @@ public class SecondTask : MonoBehaviour
 
         if (!PlayerPrefs.HasKey("AllIDbool")) {
             PlayerPrefs.SetString("AllIDbool", ID);
-        }
-
-        if (PlayerPrefs.HasKey(ID + "bool")) {
-            if (PlayerPrefs.GetInt(ID + "bool") == 1) {
-                isTrue = true;
-            } else {
-                isTrue = false;
-            }
         } else {
-            PlayerPrefs.SetString("AllIDbool", PlayerPrefs.GetString("AllIDbool") + "|" + ID);
-            PlayerPrefs.SetInt(ID + "bool", 0);
+            if (PlayerPrefs.HasKey(ID + "bool")) {
+                if (PlayerPrefs.GetInt(ID + "bool") == 1) {
+                    isTrue = true;
+                } else {
+                    isTrue = false;
+                }
+            } else {
+                PlayerPrefs.SetString("AllIDbool", PlayerPrefs.GetString("AllIDbool") + "|" + ID);
+                PlayerPrefs.SetInt(ID + "bool", 0);
+            }
         }
 
         animator.SetBool("isTrue", isTrue);
@@ -220,7 +220,9 @@ public class SecondTask : MonoBehaviour
             if (cam.m_Lens.OrthographicSize <= normalZoom) {
                 cam.m_Lens.OrthographicSize += Time.deltaTime * speedZoom;
             }
-            taskMenu.SetActive(false);
+            if (BG.GetCurrentAnimatorStateInfo(0).IsName("Inactive")) {
+                taskMenu.SetActive(false);
+            }
             clicked = false;
         }
 

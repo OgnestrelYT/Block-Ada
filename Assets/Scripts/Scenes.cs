@@ -16,9 +16,12 @@ public class Scenes : MonoBehaviour
     [HideInInspector] public static string objtag = ""; // тэг для столкновений
     [HideInInspector] public static bool need = false; // нужно ли проверять столкновения
 
-
     [Header("Редактирование:")]
-	[SerializeField] private Act[] acts; // настраиваемый вручную список ачивок
+    [SerializeField] public string ID; // ID сценария
+
+    [Space]    
+    [Header("Редактирование:")]
+	[SerializeField] private Act[] acts; // настраиваемый вручную список актов
 
     [Space]
 
@@ -31,19 +34,26 @@ public class Scenes : MonoBehaviour
 	{
         [Space]
         [Header("Списки:")]
+
         [Space]
         [SerializeField] public float times; // время
+
         [Space]
         [SerializeField] public Dialogue dialogues; // настраиваемый список диалога
+
         [Space]
         [SerializeField] public Animation animations; // настраиваемый список анимаций
+        
         [Space]
         [SerializeField] public GameObject[] task; // настраиваемый Task
+
+        [Space]
+        [SerializeField] public GameObject[] imageToShow; // показ картинки
+
         [Space]
         [SerializeField] public bool dark; // настраиваемый список диалога
 
         [Space]
-
         [Header("Разрешения:")]
         public bool moveAllow; // можно ли двигаться
         public bool interactionAllow; // можно ли взаимодействовать
@@ -92,6 +102,18 @@ public class Scenes : MonoBehaviour
         canSkipD = false;
         canSkipT = false;
         canSkipTime = false;
+        if (!PlayerPrefs.HasKey("AllScenes")) {
+            PlayerPrefs.SetString("AllScenes", ID);
+        }
+
+        if (PlayerPrefs.HasKey(ID + "Scene")) {
+            numAct = PlayerPrefs.GetInt(ID + "Scene");
+        } else {
+            PlayerPrefs.SetString("AllScenes", PlayerPrefs.GetString("AllScenes") + "|" + ID);
+            PlayerPrefs.SetInt(ID + "Scene", 0);
+            numAct = 0;
+        }
+
         Load();
     }
 
@@ -108,6 +130,8 @@ public class Scenes : MonoBehaviour
                 AchievementSystem.use.Save();
             }
         }
+
+        
 
         // Затемнение
         black.SetActive(acts[numAct].dark);
@@ -137,6 +161,13 @@ public class Scenes : MonoBehaviour
         } else {
             need = false;
             canSkipT = true;
+        }
+
+        // Показ картинок
+        if (acts[numAct].imageToShow.Length > 0) {
+            for (int i = 0; i < acts[numAct].imageToShow.Length; i += 1) {
+                acts[numAct].imageToShow[i].SetActive(true);
+            }
         }
     }
 
@@ -172,8 +203,21 @@ public class Scenes : MonoBehaviour
             canSkipA = false;
             canSkipT = false;
             canSkipTime = false;
+            for (int i = 0; i < acts[numAct].imageToShow.Length; i += 1) {
+                acts[numAct].imageToShow[i].SetActive(false);
+            }
             numAct++;
+            PlayerPrefs.SetInt(ID + "Scene", numAct - 1);
             Load();
         }
+    }
+
+    public void ClearAllScenes() {
+        string[] splitID = PlayerPrefs.GetString("AllScenes").Split();
+		PlayerPrefs.DeleteKey("AllScenes");
+		foreach (string id in splitID) {
+			PlayerPrefs.DeleteKey(id + "Scene");
+		}
+		SecondTask.isTrue = false;
     }
 }
