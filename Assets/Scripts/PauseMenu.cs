@@ -32,6 +32,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject secretButtonObj;
     public Button secretButton;
     public GameObject pauseSecret;
+    public bool canAlwaysOpen;
 
 
     [HideInInspector, SerializeField] public static bool PauseGame = false;
@@ -66,7 +67,7 @@ public class PauseMenu : MonoBehaviour
                     PlayerPrefs.Save();
                     Back();
                 }
-            } else if (canOpen) {
+            } else if ((canOpen) || (canAlwaysOpen)) {
                 Pause();
             }
         }

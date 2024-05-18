@@ -30,6 +30,7 @@ public class Car : MonoBehaviour
                 AchievementSystem.use.AdjustAchievement(1, 1);
                 PlayerPrefs.SetInt(ID + "bool", 1);
             }
+            
             CodeCompilating.finished = true;
             animator.SetBool("isActive", true);
             AchievementSystem.use.Save();

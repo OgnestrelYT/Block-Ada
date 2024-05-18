@@ -7,9 +7,11 @@ using UnityEngine.UI;
 public class Scenes : MonoBehaviour
 {
     [HideInInspector, SerializeField] public int countActs; // всего актов
-    [HideInInspector, SerializeField] public int numAct = 0; // акт сейчас
+    [HideInInspector, SerializeField] public static int numAct = 0; // акт сейчас
     [HideInInspector] public static bool canSkipD; // можно ли идти дальше
     [HideInInspector] public static bool canSkipA; // можно ли идти дальше
+    [HideInInspector] public static bool canSkipMenu; // можно ли идти дальше
+    [HideInInspector] public static bool canSkipFinish; // можно ли идти дальше
     [HideInInspector] public static bool canSkipT; // можно ли идти дальше
     [HideInInspector] public static bool canSkipTime; // можно ли идти дальше
     [HideInInspector] public static float timer = 0f; // таймер
@@ -57,6 +59,8 @@ public class Scenes : MonoBehaviour
         [Header("Разрешения:")]
         public bool moveAllow; // можно ли двигаться
         public bool interactionAllow; // можно ли взаимодействовать
+        public bool isCheckOpeningMenu; // нужно ли проверять открыл игрок вторую головоломку или нет
+        public bool needToCheckSecondTask; // нужно ли проверять что игрок прошел головоломку
 
         [Space]
 
@@ -99,6 +103,8 @@ public class Scenes : MonoBehaviour
         black.SetActive(false);
         countActs = acts.Length;
         canSkipA = false;
+        canSkipMenu = false;
+        canSkipFinish = false;
         canSkipD = false;
         canSkipT = false;
         canSkipTime = false;
@@ -131,6 +137,19 @@ public class Scenes : MonoBehaviour
             }
         }
 
+        // Проверка на открытие менюшки второй головоломки
+        if (acts[numAct].isCheckOpeningMenu) {
+            canSkipMenu = false;
+        } else {
+            canSkipMenu = true;
+        }
+
+        // Проверка прохождения второй головоломки
+        if (acts[numAct].needToCheckSecondTask) {
+            canSkipFinish = false;
+        } else {
+            canSkipFinish = true;
+        }
         
 
         // Затемнение
@@ -174,6 +193,17 @@ public class Scenes : MonoBehaviour
 
     public void Update()
     {
+        SecondTask.interactionAllow = acts[numAct].interactionAllow;
+
+        if (acts[numAct].isCheckOpeningMenu) {
+            canSkipMenu = SecondTask.openFirstly;
+        }
+
+        if (acts[numAct].needToCheckSecondTask) {
+            canSkipFinish = SecondTask.isTrue;
+        }
+
+
         // Время
         if (acts[numAct].times > 0f) {
             timer += Time.deltaTime;
@@ -196,7 +226,7 @@ public class Scenes : MonoBehaviour
 
         Door.interactionAllow = acts[numAct].interactionAllow;
 
-        if ((canSkipD) && (canSkipTime) && (canSkipA) && (canSkipT) && (numAct < countActs - 1)) {
+        if ((canSkipD) && (canSkipTime) && (canSkipA) && (canSkipT) && (numAct < countActs - 1) && (canSkipMenu) && (canSkipFinish)) {
             timer = 0f;
             black.SetActive(false);
             canSkipD = false;
@@ -207,7 +237,6 @@ public class Scenes : MonoBehaviour
                 acts[numAct].imageToShow[i].SetActive(false);
             }
             numAct++;
-            PlayerPrefs.SetInt(ID + "Scene", numAct - 1);
             Load();
         }
     }

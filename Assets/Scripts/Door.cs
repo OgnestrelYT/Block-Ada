@@ -31,6 +31,7 @@ public class Door : MonoBehaviour
     }
 
     public void SceneChanger() {
+        Scenes.numAct = 0;
         SceneManager.LoadScene(scene);
     }
 

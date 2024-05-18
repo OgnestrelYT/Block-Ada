@@ -68,29 +68,13 @@ public class SecondTask : MonoBehaviour
     [HideInInspector, SerializeField] public string codeToSave, savedText;
     [HideInInspector, SerializeField] public GameObject gm;
     [HideInInspector, SerializeField] public static int c;
+    [HideInInspector, SerializeField] public static bool interactionAllow;
+    [HideInInspector, SerializeField] public static bool openFirstly;
 
 
     private void Start()
     {
         Car.ID = ID;
-        if (!PlayerPrefs.HasKey("isFirst")) {
-            PlayerPrefs.SetInt("isFirst", 1);
-        }
-
-        if (!PlayerPrefs.HasKey("AllIDbool")) {
-            PlayerPrefs.SetString("AllIDbool", ID);
-        } else {
-            if (PlayerPrefs.HasKey(ID + "bool")) {
-                if (PlayerPrefs.GetInt(ID + "bool") == 1) {
-                    isTrue = true;
-                } else {
-                    isTrue = false;
-                }
-            } else {
-                PlayerPrefs.SetString("AllIDbool", PlayerPrefs.GetString("AllIDbool") + "|" + ID);
-                PlayerPrefs.SetInt(ID + "bool", 0);
-            }
-        }
 
         animator.SetBool("isTrue", isTrue);
         taskMenu.SetActive(false);
@@ -110,15 +94,20 @@ public class SecondTask : MonoBehaviour
     }
 
     public void OnClick() {
-        clicked = true;
-        if ((canUse) && (inArea)) {
-            OnActivate();
+        if (interactionAllow) {
+            clicked = true;
+            if ((canUse) && (inArea)) {
+                OnActivate();
+            }
         }
     }
 
     public void OnActivate() {
         if (PlayerPrefs.GetInt("isFirst") == 1) {
             helpMenu.SetActive(true);
+            openFirstly = true;
+        } else {
+            openFirstly = false;
         }
 
         CodeCompilating.activeScene = true;
@@ -153,7 +142,7 @@ public class SecondTask : MonoBehaviour
             for (int x = 0; x < xGamemap; x++) {
                 if (int.Parse(level[y][x]) == 99) {
                     c += 1;
-                    Instantiate(tile[0], new Vector3(startX + (x * WH), startY - (y * WH), 0), Quaternion.identity, gm.transform);
+                    Instantiate(tile[16], new Vector3(startX + (x * WH), startY - (y * WH), 0), Quaternion.identity, gm.transform);
                 } else {
                     Instantiate(tile[int.Parse(level[y][x])], new Vector3(startX + (x * WH), startY - (y * WH), 0), Quaternion.identity, gm.transform);
                 }

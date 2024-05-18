@@ -65,7 +65,7 @@ public class CodeCompilating : MonoBehaviour
 
 
         if (isCorrect) {
-            if (start) {
+            if ((start) && (!finished)) {
                 inputField.interactable = false;
                 if (per >= SecondTask.WH) {
                     per = 0f;
