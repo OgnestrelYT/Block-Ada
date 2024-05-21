@@ -203,7 +203,9 @@ public class SecondTask : MonoBehaviour
         } else {
             CodeCompilating.activeScene = false;
             cam.Follow = player;
-            PauseMenu.canOpen = true;
+            if (PauseMenu.canOpen) {
+                PauseMenu.canOpen = true;
+            }
             other.SetActive(false);
             BG.SetBool("isActive", false);
             if (cam.m_Lens.OrthographicSize <= normalZoom) {

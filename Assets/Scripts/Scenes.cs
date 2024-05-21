@@ -11,6 +11,7 @@ public class Scenes : MonoBehaviour
     [HideInInspector] public static bool canSkipD; // можно ли идти дальше
     [HideInInspector] public static bool canSkipA; // можно ли идти дальше
     [HideInInspector] public static bool canSkipMenu; // можно ли идти дальше
+    [HideInInspector] public static bool canSkipCheck; // можно ли идти дальше
     [HideInInspector] public static bool canSkipFinish; // можно ли идти дальше
     [HideInInspector] public static bool canSkipT; // можно ли идти дальше
     [HideInInspector] public static bool canSkipTime; // можно ли идти дальше
@@ -60,6 +61,7 @@ public class Scenes : MonoBehaviour
         public bool moveAllow; // можно ли двигаться
         public bool interactionAllow; // можно ли взаимодействовать
         public bool isCheckOpeningMenu; // нужно ли проверять открыл игрок вторую головоломку или нет
+        public bool isCheckAny; // нужно ли проверять булеву переменную и здругих классов
         public bool needToCheckSecondTask; // нужно ли проверять что игрок прошел головоломку
 
         [Space]
@@ -104,6 +106,7 @@ public class Scenes : MonoBehaviour
         countActs = acts.Length;
         canSkipA = false;
         canSkipMenu = false;
+        canSkipCheck = false;
         canSkipFinish = false;
         canSkipD = false;
         canSkipT = false;
@@ -143,6 +146,15 @@ public class Scenes : MonoBehaviour
         } else {
             canSkipMenu = true;
         }
+
+
+        // Проверка тру фолз просто, которую можно менять
+        if (acts[numAct].isCheckAny) {
+            canSkipCheck = false;
+        } else {
+            canSkipCheck = true;
+        }
+
 
         // Проверка прохождения второй головоломки
         if (acts[numAct].needToCheckSecondTask) {
@@ -194,6 +206,7 @@ public class Scenes : MonoBehaviour
     public void Update()
     {
         SecondTask.interactionAllow = acts[numAct].interactionAllow;
+        AnyMenu.interactionAllow = acts[numAct].interactionAllow;
 
         if (acts[numAct].isCheckOpeningMenu) {
             canSkipMenu = SecondTask.openFirstly;
@@ -226,13 +239,16 @@ public class Scenes : MonoBehaviour
 
         Door.interactionAllow = acts[numAct].interactionAllow;
 
-        if ((canSkipD) && (canSkipTime) && (canSkipA) && (canSkipT) && (numAct < countActs - 1) && (canSkipMenu) && (canSkipFinish)) {
+        if ((canSkipD) && (canSkipTime) && (canSkipA) && (canSkipT) && (numAct < countActs - 1) && (canSkipMenu) && (canSkipFinish) && (canSkipCheck)) {
             timer = 0f;
             black.SetActive(false);
             canSkipD = false;
             canSkipA = false;
             canSkipT = false;
             canSkipTime = false;
+            canSkipMenu = false;
+            canSkipFinish = false;
+            canSkipCheck = false;
             for (int i = 0; i < acts[numAct].imageToShow.Length; i += 1) {
                 acts[numAct].imageToShow[i].SetActive(false);
             }
