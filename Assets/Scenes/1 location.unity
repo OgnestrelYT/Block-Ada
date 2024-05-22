@@ -1076,7 +1076,10 @@ MonoBehaviour:
     dark: 1
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1102,7 +1105,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1124,7 +1130,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 1
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1146,7 +1155,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1169,7 +1181,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1195,7 +1210,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1216,7 +1234,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 00000000
@@ -1239,7 +1260,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1261,7 +1285,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 1
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1283,7 +1310,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1306,7 +1336,10 @@ MonoBehaviour:
     dark: 1
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1332,7 +1365,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1355,7 +1391,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1382,7 +1421,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1411,7 +1453,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1501,7 +1546,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1533,7 +1581,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1563,7 +1614,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1587,7 +1641,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1611,7 +1668,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1643,7 +1703,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1668,7 +1731,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1696,7 +1762,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1724,7 +1793,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1747,7 +1819,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
@@ -1769,14 +1844,17 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 02000000
       value: 01000000
     description: "2 \u0441\u0435\u043A\u0443\u043D\u0434\u044B \u0431\u0435\u0437\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044F"
     isCompleted: 0
-  - times: 2
+  - times: 0
     dialogues:
       messages:
       - "\u041F\u0444\u2026 \u041D\u0435 \u043D\u0430\u0434\u043E \u043C\u043D\u0435
@@ -1794,14 +1872,17 @@ MonoBehaviour:
     dark: 0
     moveAllow: 0
     interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 
       value: 
     description: "\u0444\u0440\u0430\u0437\u0430 \u0410\u0434\u044B"
     isCompleted: 0
-  - times: 2
+  - times: 0
     dialogues:
       messages: []
       avatar: {fileID: 21300000, guid: 3cd25a2353ea31241af9868d6039bf0e, type: 3}
@@ -1815,7 +1896,10 @@ MonoBehaviour:
     dark: 0
     moveAllow: 1
     interactionAllow: 1
+    interactionAllowDoor: 1
+    interactionAllowPivo: 0
     isCheckOpeningMenu: 0
+    isCheckAny: 0
     needToCheckSecondTask: 0
     achievements:
       id: 

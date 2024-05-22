@@ -7,45 +7,49 @@ public class AnyMenu : MonoBehaviour
 {
     [Header("Основные настройки")]
     [SerializeField] public GameObject mainMenu; // само главное меню
+    [SerializeField] public GameObject topicsParent; // парент всех топиков
+    [SerializeField] public GameObject blur; // невидимый блюр, чтобы кнопки не тыкались
 
     [Space]
-    [SerializeField] private Topic[] topics; // все топики
+    [SerializeField] public bool isParent; // является родителем или нет
+    [SerializeField] public bool hideMainMenu; // нужно ли прятать меин меню при открытии топиков
 
-    [HideInInspector] public static bool isMainOpen = false; // открыт или нет главный экранчик
+
+    [HideInInspector] public static bool isMainOpen; // открыт или нет главный экранчик
+    [HideInInspector] public static bool isTopicOpen; // открыт ли какой-то топик
     [HideInInspector] public static bool inArea; // находится ли в зоне действия
     [HideInInspector] public static bool interactionAllow; // можно ли взаимодействовать
-    [HideInInspector] public static bool topicOpened; // открыт ли какой-то топик
-
-
-    [System.Serializable] struct Topic
-	{
-        [Space]
-        [SerializeField] public string name; // название топика
-        [SerializeField] public Button buttonForOpen; // кнопка для открытия топика
-        [SerializeField] public GameObject openedTopic; // открытый топик
-
-        [HideInInspector] public bool isTopicOpen; // открыт или нет топик
-    }
 
 
     void Start()
     {
-        mainMenu.SetActive(isMainOpen);
-        for (int i = 0; i < topics.Length; i++) {
-            topics[i].openedTopic.SetActive(topics[i].isTopicOpen);
+        PauseMenu.canOpen = true;
+        if (isParent) {
+            mainMenu.SetActive(false);
+        }
+
+        GameObject[] m_Child = new GameObject[topicsParent.transform.childCount]; // скрытие всех окон топиков
+        for (int i = 0; i < m_Child.Length; i++)
+        {
+            topicsParent.transform.GetChild(i).gameObject.SetActive(false);
         }
     }
 
 
-    public void TopicButtons(int n) {
-        topics[n].isTopicOpen = true;
-        topicOpened = true;
+    public void TopicButtons(GameObject window) {
+        window.SetActive(true); // показ окна топика
+        blur.SetActive(true); // делаем защиту от нажатий
+        isTopicOpen = true;
     }
 
 
     public void OnClick() {
         if ((interactionAllow) && (inArea)) {
-            PauseMenu.canOpen = false;
+            if (isParent) {
+                Player.canMove = false; // игрок теперь не может двигаться
+                PauseMenu.canOpen = false; // нельзя открывать меню с настройками и тд
+            }
+
             isMainOpen = true;
             mainMenu.SetActive(isMainOpen);
         }
@@ -55,31 +59,36 @@ public class AnyMenu : MonoBehaviour
     public void BackToTheGame() {
         isMainOpen = false;
         mainMenu.SetActive(isMainOpen);
-        PauseMenu.canOpen = true;
+
+        if (isParent) {
+            Player.canMove = true; // игрок теперь может двигаться
+            PauseMenu.canOpen = true; // можно открывать меню с настройками и тд
+        }
     }
 
 
     public void BackToTheMainMenu() {
-        isMainOpen = true;
-        topicOpened = false;
-        for (int i = 0; i < topics.Length; i++) {
-            topics[i].isTopicOpen = false;
+        isTopicOpen = false;
+        mainMenu.SetActive(true); // показ меин меню
+        blur.SetActive(false); // убираем защиту от нажатий
+
+        GameObject[] m_Child = new GameObject[topicsParent.transform.childCount]; // скрытие всех окон топиков
+        for (int i = 0; i < m_Child.Length; i++)
+        {
+            topicsParent.transform.GetChild(i).gameObject.SetActive(false);
         }
     }
 
 
     void Update()
     {
-        for (int i = 0; i < topics.Length; i++) {
-            Debug.Log(topics[i].isTopicOpen);
-            topics[i].openedTopic.SetActive(topics[i].isTopicOpen);
-        }
-
         if (Input.GetKeyDown(KeyCode.Escape)) {
             if (isMainOpen) {
-                BackToTheGame();
-            } else if (topicOpened) {
-                BackToTheMainMenu();
+                if (isTopicOpen) {
+                    BackToTheMainMenu();
+                } else {
+                    BackToTheGame();
+                }
             }
         }
     }

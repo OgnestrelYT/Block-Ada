@@ -60,6 +60,8 @@ public class Scenes : MonoBehaviour
         [Header("Разрешения:")]
         public bool moveAllow; // можно ли двигаться
         public bool interactionAllow; // можно ли взаимодействовать
+        public bool interactionAllowDoor; // можно ли взаимодействовать с дверьми
+        public bool interactionAllowPivo; // можно ли взаимодействовать с пивом
         public bool isCheckOpeningMenu; // нужно ли проверять открыл игрок вторую головоломку или нет
         public bool isCheckAny; // нужно ли проверять булеву переменную и здругих классов
         public bool needToCheckSecondTask; // нужно ли проверять что игрок прошел головоломку
@@ -206,7 +208,7 @@ public class Scenes : MonoBehaviour
     public void Update()
     {
         SecondTask.interactionAllow = acts[numAct].interactionAllow;
-        AnyMenu.interactionAllow = acts[numAct].interactionAllow;
+        AnyMenu.interactionAllow = acts[numAct].interactionAllowPivo;
 
         if (acts[numAct].isCheckOpeningMenu) {
             canSkipMenu = SecondTask.openFirstly;
@@ -237,7 +239,7 @@ public class Scenes : MonoBehaviour
             }
         }
 
-        Door.interactionAllow = acts[numAct].interactionAllow;
+        Door.interactionAllow = acts[numAct].interactionAllowDoor;
 
         if ((canSkipD) && (canSkipTime) && (canSkipA) && (canSkipT) && (numAct < countActs - 1) && (canSkipMenu) && (canSkipFinish) && (canSkipCheck)) {
             timer = 0f;
