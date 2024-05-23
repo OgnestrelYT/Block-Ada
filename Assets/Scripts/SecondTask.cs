@@ -97,6 +97,7 @@ public class SecondTask : MonoBehaviour
         if (interactionAllow) {
             clicked = true;
             if ((canUse) && (inArea)) {
+                PauseMenu.canOpen = false;
                 OnActivate();
             }
         }
@@ -185,7 +186,6 @@ public class SecondTask : MonoBehaviour
             cam.Follow = taskObj;
             Player.canMove = false;
             isActivate = true;
-            PauseMenu.canOpen = false;
             taskMenu.SetActive(true);
             BG.SetBool("isActive", true);
             if (cam.m_Lens.OrthographicSize >= zoom) {
@@ -198,14 +198,12 @@ public class SecondTask : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape)) {
                 clicked = false;
                 Player.canMove = true;
+                PauseMenu.canOpen = true;
                 Destroy(gm);
             }
         } else {
             CodeCompilating.activeScene = false;
             cam.Follow = player;
-            if (PauseMenu.canOpen) {
-                PauseMenu.canOpen = true;
-            }
             other.SetActive(false);
             BG.SetBool("isActive", false);
             if (cam.m_Lens.OrthographicSize <= normalZoom) {

@@ -23,7 +23,6 @@ public class AnyMenu : MonoBehaviour
 
     void Start()
     {
-        PauseMenu.canOpen = true;
         if (isParent) {
             mainMenu.SetActive(false);
         }

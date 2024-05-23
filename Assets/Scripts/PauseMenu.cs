@@ -37,7 +37,7 @@ public class PauseMenu : MonoBehaviour
 
     [HideInInspector, SerializeField] public static bool PauseGame = false;
     [HideInInspector, SerializeField] public bool InMain = false;
-    [HideInInspector, SerializeField] public static bool canOpen;
+    [HideInInspector, SerializeField] public static bool canOpen = true;
     
 
     void Start(){
