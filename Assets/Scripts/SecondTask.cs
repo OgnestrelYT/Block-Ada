@@ -237,10 +237,6 @@ public class SecondTask : MonoBehaviour
         }
     }
 
-    public void Firstly() {
-		PlayerPrefs.SetInt("isFirst", 1);
-	}
-
     public void DeleteAllCodes() {
 		string[] splitID = PlayerPrefs.GetString("AllID").Split();
 		PlayerPrefs.DeleteKey("AllID");

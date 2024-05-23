@@ -10,7 +10,7 @@ public class SecondTaskEditor : Editor {
 	public override void OnInspectorGUI()
 	{
 		DrawDefaultInspector();
-		SecondTask e = (SecondTask)target;
+		PauseSettings e = (PauseSettings)target;
 
 		GUILayout.Label("Подсказка в начале:", EditorStyles.boldLabel);
 		if(GUILayout.Button("Обнулить"))

@@ -13,6 +13,8 @@ public class Scenes : MonoBehaviour
     [HideInInspector] public static bool canSkipMenu; // можно ли идти дальше
     [HideInInspector] public static bool canSkipCheck; // можно ли идти дальше
     [HideInInspector] public static bool canSkipFinish; // можно ли идти дальше
+    [HideInInspector] public static bool canSkipLever; // можно ли идти дальше
+    [HideInInspector] public static bool canSkipHelpMenu; // можно ли идти дальше
     [HideInInspector] public static bool canSkipT; // можно ли идти дальше
     [HideInInspector] public static bool canSkipTime; // можно ли идти дальше
     [HideInInspector] public static float timer = 0f; // таймер
@@ -57,6 +59,9 @@ public class Scenes : MonoBehaviour
         [SerializeField] public bool dark; // настраиваемый список диалога
 
         [Space]
+        [SerializeField] public bool showHelp; // показывать ли окно помощи
+
+        [Space]
         [Header("Разрешения:")]
         public bool moveAllow; // можно ли двигаться
         public bool interactionAllow; // можно ли взаимодействовать
@@ -65,6 +70,7 @@ public class Scenes : MonoBehaviour
         public bool isCheckOpeningMenu; // нужно ли проверять открыл игрок вторую головоломку или нет
         public bool isCheckAny; // нужно ли проверять булеву переменную и здругих классов
         public bool needToCheckSecondTask; // нужно ли проверять что игрок прошел головоломку
+        public bool needToCheckLevers; // нужно ли проверять что игрок прошел рычаги
 
         [Space]
 
@@ -111,6 +117,8 @@ public class Scenes : MonoBehaviour
         canSkipMenu = false;
         canSkipCheck = false;
         canSkipFinish = false;
+        canSkipLever = false;
+        canSkipHelpMenu = false;
         canSkipD = false;
         canSkipT = false;
         canSkipTime = false;
@@ -165,7 +173,24 @@ public class Scenes : MonoBehaviour
         } else {
             canSkipFinish = true;
         }
+
+
+        // Проверка прохождения первой головоломки
+        if (acts[numAct].needToCheckLevers) {
+            canSkipLever = false;
+        } else {
+            canSkipLever = true;
+        }
         
+
+        if (acts[numAct].showHelp) {
+            HelpMenu.needShow = true;
+            canSkipHelpMenu = false;
+        } else {
+            HelpMenu.needShow = false;
+            canSkipHelpMenu = true;
+        }
+
 
         // Затемнение
         black.SetActive(acts[numAct].dark);
@@ -209,6 +234,7 @@ public class Scenes : MonoBehaviour
     public void Update()
     {
         SecondTask.interactionAllow = acts[numAct].interactionAllow;
+        Lever.interactionAllow = acts[numAct].interactionAllow;
         AnyMenu.interactionAllow = acts[numAct].interactionAllowPivo;
 
         if (acts[numAct].isCheckOpeningMenu) {
@@ -218,6 +244,15 @@ public class Scenes : MonoBehaviour
         if (acts[numAct].needToCheckSecondTask) {
             canSkipFinish = SecondTask.isTrue;
         }
+
+        if (acts[numAct].needToCheckLevers) {
+            canSkipLever = BoolMath.isSolved;
+        }
+
+        if (acts[numAct].showHelp) {
+            canSkipHelpMenu = HelpMenu.isClosed;
+        }
+
 
 
         // Время
@@ -244,7 +279,7 @@ public class Scenes : MonoBehaviour
 
         Door.interactionAllow = acts[numAct].interactionAllowDoor;
 
-        if ((canSkipD) && (canSkipTime) && (canSkipA) && (canSkipT) && (numAct < countActs - 1) && (canSkipMenu) && (canSkipFinish) && (canSkipCheck)) {
+        if ((canSkipD) && (canSkipTime) && (canSkipA) && (canSkipT) && (numAct < countActs - 1) && (canSkipMenu) && (canSkipFinish) && (canSkipLever) && (canSkipHelpMenu) && (canSkipCheck)) {
             timer = 0f;
             black.SetActive(false);
             canSkipD = false;
@@ -253,6 +288,8 @@ public class Scenes : MonoBehaviour
             canSkipTime = false;
             canSkipMenu = false;
             canSkipFinish = false;
+            canSkipLever = false;
+            canSkipHelpMenu = false;
             canSkipCheck = false;
             for (int i = 0; i < acts[numAct].imageToShow.Length; i += 1) {
                 acts[numAct].imageToShow[i].SetActive(false);

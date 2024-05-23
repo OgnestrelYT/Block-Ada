@@ -5,22 +5,31 @@ using UnityEngine.UI;
 
 public class BoolMath : MonoBehaviour
 {
-    public static bool a;
-    public static bool b;
-    public static bool c;
-    public static bool d;
-    public static bool e;
+    public int ID;
+    public static bool x;
+    public static bool y;
+    public static bool z;
+    public static bool isSolved;
     public bool f = true;
-    public Text text;
+
+    void Start() 
+    {
+        PlayerPrefs.SetInt(ID + "lever", 0);
+    }
 
     void Update()
     {
-        if (((((!a && b) || (!c && e)) && ((d && !e) || (a && c)))) == f)
+        if ((!z && x || x && y) == f)
         {
-            text.text = "Вы решили!";
+            if (PlayerPrefs.GetInt(ID + "lever") == 0) {
+                AchievementSystem.use.AdjustAchievement(4, 1);
+                AchievementSystem.use.Save();
+                PlayerPrefs.SetInt(ID + "lever", 1);
+            }
+            isSolved = true;
         }
         else {
-            text.text = "Пока не правильно";
+            isSolved = false;
         }
     }
 }

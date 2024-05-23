@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Level : MonoBehaviour, IBeginDragHandler, IDragHandler
+public class Lever : MonoBehaviour, IBeginDragHandler, IDragHandler
 {
     public Animator animator;
     public bool startPos;
     public bool inArea;
     public bool IsOn;
     public int number;
+    public static bool interactionAllow;
 
     private void Start()
     {
@@ -19,17 +20,29 @@ public class Level : MonoBehaviour, IBeginDragHandler, IDragHandler
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (Mathf.Abs(eventData.delta.x) < Mathf.Abs(eventData.delta.y))
+        if ((Mathf.Abs(eventData.delta.x) < Mathf.Abs(eventData.delta.y)) && (PlayerPrefs.GetInt("LeverDrag") == 0))
         {
-            if (inArea)
+            if ((inArea) && (interactionAllow))
             {   
                 if (eventData.delta.y > 0){
-                    animator.SetBool("IsOn", true);
                     IsOn = true;
+                    animator.SetBool("IsOn", IsOn);
                 } else {
-                    animator.SetBool("IsOn", false);
                     IsOn =  false;
+                    animator.SetBool("IsOn", IsOn);
                 }
+            }
+        }
+    }
+
+    public void onClick() {
+        if ((PlayerPrefs.GetInt("LeverDrag") == 1) && (interactionAllow)) {
+            if (IsOn) {
+                IsOn = false;
+                animator.SetBool("IsOn", IsOn);
+            } else {
+                IsOn = true;
+                animator.SetBool("IsOn", IsOn);
             }
         }
     }
@@ -37,31 +50,25 @@ public class Level : MonoBehaviour, IBeginDragHandler, IDragHandler
     public void OnEnter() {
         animator.SetBool("isAct", true);
     }
+
     public void OnExit() {
         animator.SetBool("isAct", false);
     }
 
     private void Update()
     {
+        Debug.Log(IsOn);
         if (number == 1)
         {
-            BoolMath.a = IsOn;
+            BoolMath.x = IsOn;
         } 
         else if (number == 2)
         {
-            BoolMath.b = IsOn;
+            BoolMath.y = IsOn;
         }
         else if (number == 3)
         {
-            BoolMath.c = IsOn;
-        }
-        else if (number == 4)
-        {
-            BoolMath.d = IsOn;
-        }
-        else if (number == 5)
-        {
-            BoolMath.e = IsOn;
+            BoolMath.z = IsOn;
         }
     }
 
