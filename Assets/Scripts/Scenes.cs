@@ -92,6 +92,7 @@ public class Scenes : MonoBehaviour
     {
         public Animator[] animationsList; // список анимаций
         public string[] animNum;
+        public bool isLoop; // надо ли зацикливать
     }
 
     [System.Serializable] struct Achievements
@@ -235,7 +236,9 @@ public class Scenes : MonoBehaviour
                 if (!(acts[numAct].animations.animationsList[i].GetCurrentAnimatorStateInfo(0).IsName(acts[numAct].animations.animNum[i]))) {
                     canSkipA = true;
                 }
-                acts[numAct].animations.animationsList[i].SetBool(acts[numAct].animations.animNum[i], false);
+                if (!acts[numAct].animations.isLoop) {
+                    acts[numAct].animations.animationsList[i].SetBool(acts[numAct].animations.animNum[i], false);
+                }
             }
         }
 
