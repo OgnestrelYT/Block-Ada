@@ -6,6 +6,8 @@ using System.Collections.Generic;
 public class AchievementSystem : MonoBehaviour {
 
 	[Header("Редактирование:")]
+    
+	[SerializeField] public AudioSource audioSource;
 	[SerializeField] private Achievement[] achievements; // настраиваемый вручную список ачивок
 	[Header("Шаблоны:")]
 	[SerializeField] private AchievementComponent messageSample; // шаблон для ачивки, которая показывается по достижению
@@ -133,6 +135,7 @@ public class AchievementSystem : MonoBehaviour {
 
 			if(!messageSample.isActive) // показываем ачивку, если в данный момент не показывается
 			{
+                audioSource.Play();
 				messageSample.SetAchievement(achievements[id].unlocked, achievements[id].bg, achievements[id].title, achievements[id].description);
 			}
 			else // или запоминаем ачивку, чтобы показать позже

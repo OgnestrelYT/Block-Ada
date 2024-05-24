@@ -1282,12 +1282,11 @@ MonoBehaviour:
     isCheckAny: 0
     needToCheckSecondTask: 0
     needToCheckLevers: 0
+    changeScene: 0
+    scene: 
     achievements:
       id: 
       value: 
-    checkWIFI: 0
-    checkDisk: 0
-    checkGraf: 0
     description: "\u0442 \u044D"
     isCompleted: 0
   - times: 0
@@ -1316,12 +1315,11 @@ MonoBehaviour:
     isCheckAny: 0
     needToCheckSecondTask: 0
     needToCheckLevers: 0
+    changeScene: 0
+    scene: 
     achievements:
       id: 
       value: 
-    checkWIFI: 0
-    checkDisk: 0
-    checkGraf: 0
     description: "\u043D\u0430\u0434\u043E \u0434\u043E\u0439\u0442\u0438 \u0434\u043E
       \u041F\u0438\u0432\u0430"
     isCompleted: 0
@@ -1356,12 +1354,11 @@ MonoBehaviour:
     isCheckAny: 0
     needToCheckSecondTask: 0
     needToCheckLevers: 0
+    changeScene: 0
+    scene: 
     achievements:
       id: 
       value: 
-    checkWIFI: 0
-    checkDisk: 0
-    checkGraf: 0
     description: "\u041C\u043E\u043D\u043E\u043B\u043E\u0433 \u0410\u0434\u044B \u043F\u0440\u043E
       \u041F\u0438\u0432\u043E"
     isCompleted: 0
@@ -1390,12 +1387,11 @@ MonoBehaviour:
     isCheckAny: 0
     needToCheckSecondTask: 0
     needToCheckLevers: 0
+    changeScene: 0
+    scene: 
     achievements:
       id: 
       value: 
-    checkWIFI: 0
-    checkDisk: 0
-    checkGraf: 0
     description: "\u043F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043D\u0430 \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u0435
       \u0433\u043E\u043B\u043E\u0432\u043E\u043B\u043E\u043C\u043A\u0438"
     isCompleted: 0
@@ -1428,12 +1424,11 @@ MonoBehaviour:
     isCheckAny: 0
     needToCheckSecondTask: 0
     needToCheckLevers: 0
+    changeScene: 0
+    scene: 
     achievements:
       id: 
       value: 
-    checkWIFI: 0
-    checkDisk: 0
-    checkGraf: 0
     description: "\u041C\u043E\u043D\u043E\u043B\u043E\u0433 \u0410\u0434\u044B \u0432
       \u043C\u0435\u043D\u044E \u0432\u0442\u043E\u0440\u043E\u0439 \u0433\u043E\u043B\u043E\u0432\u043E\u043B\u043E\u043C\u043A\u0438"
     isCompleted: 0
@@ -1462,12 +1457,11 @@ MonoBehaviour:
     isCheckAny: 0
     needToCheckSecondTask: 1
     needToCheckLevers: 0
+    changeScene: 0
+    scene: 
     achievements:
       id: 
       value: 
-    checkWIFI: 0
-    checkDisk: 0
-    checkGraf: 0
     description: "\u0413\u043E\u043B\u043E\u0432\u043E\u043B\u043E\u043C\u043A\u0430
       \u0440\u0435\u0448\u0435\u043D\u0430"
     isCompleted: 0
@@ -1499,12 +1493,11 @@ MonoBehaviour:
     isCheckAny: 0
     needToCheckSecondTask: 0
     needToCheckLevers: 0
+    changeScene: 0
+    scene: 
     achievements:
       id: 
       value: 
-    checkWIFI: 0
-    checkDisk: 0
-    checkGraf: 0
     description: "\u0410\u0434\u0430 \u0433\u043E\u0432\u043E\u0440\u0438\u0442,
       \u0447\u0442\u043E \u0440\u0435\u0448\u0438\u043B\u0430 \u0433\u043E\u043B\u043E\u0432\u043E\u043B\u043E\u043C\u043A\u0443"
     isCompleted: 0
@@ -1534,12 +1527,11 @@ MonoBehaviour:
     isCheckAny: 0
     needToCheckSecondTask: 0
     needToCheckLevers: 0
+    changeScene: 0
+    scene: 
     achievements:
       id: 
       value: 
-    checkWIFI: 0
-    checkDisk: 0
-    checkGraf: 0
     description: "\u0434\u043E \u041F\u0438\u0432\u0430 \u043D\u043E\u0434\u043E
       \u0434\u043E\u0439\u0442\u0438"
     isCompleted: 0
@@ -1577,12 +1569,11 @@ MonoBehaviour:
     isCheckAny: 0
     needToCheckSecondTask: 0
     needToCheckLevers: 0
+    changeScene: 0
+    scene: 
     achievements:
       id: 
       value: 
-    checkWIFI: 0
-    checkDisk: 0
-    checkGraf: 0
     description: "\u0433\u043E\u0432\u043E\u0440\u0438\u0442 \u041F\u0438\u0432\u043E"
     isCompleted: 0
   - times: 0
@@ -1617,12 +1608,11 @@ MonoBehaviour:
     isCheckAny: 0
     needToCheckSecondTask: 0
     needToCheckLevers: 0
+    changeScene: 0
+    scene: 
     achievements:
       id: 
       value: 
-    checkWIFI: 0
-    checkDisk: 0
-    checkGraf: 0
     description: "\u0433\u043E\u0432\u043E\u0440\u0438\u0442 \u0410\u0434\u0430 2"
     isCompleted: 0
   - times: 0
@@ -1654,12 +1644,11 @@ MonoBehaviour:
     isCheckAny: 0
     needToCheckSecondTask: 0
     needToCheckLevers: 0
+    changeScene: 0
+    scene: 
     achievements:
       id: 
       value: 
-    checkWIFI: 0
-    checkDisk: 0
-    checkGraf: 0
     description: "\u0433\u043E\u0432\u043E\u0440\u0438\u0442 \u041F\u0438\u0432\u043E
       3"
     isCompleted: 0
@@ -1691,12 +1680,11 @@ MonoBehaviour:
     isCheckAny: 0
     needToCheckSecondTask: 0
     needToCheckLevers: 0
+    changeScene: 0
+    scene: 
     achievements:
       id: 
       value: 
-    checkWIFI: 0
-    checkDisk: 0
-    checkGraf: 0
     description: "\u0433\u043E\u0432\u043E\u0440\u0438\u0442 \u0410\u0434\u0430 4"
     isCompleted: 0
   - times: 1
@@ -1724,12 +1712,11 @@ MonoBehaviour:
     isCheckAny: 0
     needToCheckSecondTask: 0
     needToCheckLevers: 0
+    changeScene: 0
+    scene: 
     achievements:
       id: 
       value: 
-    checkWIFI: 0
-    checkDisk: 0
-    checkGraf: 0
     description: "\u0442\u0435\u043C\u043D\u044B\u0439 \u044D\u043A\u0440\u0430\u043D"
     isCompleted: 0
   - times: 0
@@ -1763,12 +1750,11 @@ MonoBehaviour:
     isCheckAny: 0
     needToCheckSecondTask: 0
     needToCheckLevers: 0
+    changeScene: 0
+    scene: 
     achievements:
       id: 
       value: 
-    checkWIFI: 0
-    checkDisk: 0
-    checkGraf: 0
     description: "\u0433\u043E\u0432\u043E\u0440\u0438\u0442 \u041F\u0438\u0432\u043E
       2_1"
     isCompleted: 0
@@ -1805,12 +1791,11 @@ MonoBehaviour:
     isCheckAny: 0
     needToCheckSecondTask: 0
     needToCheckLevers: 0
+    changeScene: 0
+    scene: 
     achievements:
       id: 
       value: 
-    checkWIFI: 0
-    checkDisk: 0
-    checkGraf: 0
     description: "\u0433\u043E\u0432\u043E\u0440\u0438\u0442 \u0410\u0434\u0430 2_2"
     isCompleted: 0
   - times: 0
@@ -1838,12 +1823,11 @@ MonoBehaviour:
     isCheckAny: 1
     needToCheckSecondTask: 0
     needToCheckLevers: 0
+    changeScene: 0
+    scene: 
     achievements:
       id: 
       value: 
-    checkWIFI: 0
-    checkDisk: 0
-    checkGraf: 0
     description: "\u043C\u043E\u0436\u043D\u043E \u0437\u0430\u043B\u0435\u0441\u0442\u044C
       \u0432 \u043F\u0438\u0432\u043E"
     isCompleted: 0
@@ -1872,12 +1856,11 @@ MonoBehaviour:
     isCheckAny: 0
     needToCheckSecondTask: 0
     needToCheckLevers: 0
+    changeScene: 0
+    scene: 
     achievements:
       id: 
       value: 
-    checkWIFI: 0
-    checkDisk: 0
-    checkGraf: 0
     description: "\u043D\u0430\u0434\u043E \u0438\u0434\u0442\u0438 \u0434\u0430\u043B\u044C\u0448\u0435"
     isCompleted: 0
   dialogueWindow: {fileID: 1005440308}
@@ -2386,6 +2369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4b68639bd412d94b94e702bfcd6c407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 1521456555}
   achievements:
   - isAchieved: 0
     title: "\u0414\u0436\u043E\u043D\u043D\u0438 \u041A\u0435\u0439\u0434\u0436 \u0431\u044B
@@ -14627,6 +14611,134 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494967545}
   m_CullTransparentMesh: 1
+--- !u!1 &1521456554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1521456556}
+  - component: {fileID: 1521456555}
+  m_Layer: 0
+  m_Name: achiev
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1521456555
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521456554}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b85b361acef93e2469ca493d5ba945df, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1521456556
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521456554}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1534551625
 GameObject:
   m_ObjectHideFlags: 0

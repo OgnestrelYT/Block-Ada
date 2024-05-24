@@ -83,6 +83,9 @@ public class Scenes : MonoBehaviour
 
         [Space]
 
+        public bool neededAudio;
+        public AudioSource audioSource;
+
         [Header("Ачивки:")]
         [SerializeField] public Achievements achievements; // настраиваемый список диалога
 
@@ -193,8 +196,12 @@ public class Scenes : MonoBehaviour
 
 
         if (acts[numAct].changeScene) {
-            numAct = 0;
             SceneManager.LoadScene(acts[numAct].scene);
+        }
+
+
+        if (acts[numAct].neededAudio) {
+            acts[numAct].audioSource.Play();
         }
         
 
