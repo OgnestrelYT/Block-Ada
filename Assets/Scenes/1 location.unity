@@ -1351,6 +1351,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 1
+    smoothStart: 0
+    smoothEnd: 1
+    smoothTime: 1
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -1383,6 +1386,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -1411,6 +1417,9 @@ MonoBehaviour:
     - {fileID: 1664102034}
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 1
     interactionAllow: 0
@@ -1439,6 +1448,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -1468,6 +1480,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -1500,6 +1515,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -1527,6 +1545,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -1556,6 +1577,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -1584,6 +1608,9 @@ MonoBehaviour:
     - {fileID: 884480374}
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 1
     interactionAllow: 0
@@ -1612,6 +1639,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -1641,6 +1671,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 1
+    smoothStart: 1
+    smoothEnd: 1
+    smoothTime: 2
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -1673,6 +1706,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -1702,6 +1738,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -1735,6 +1774,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -1770,6 +1812,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -1866,6 +1911,9 @@ MonoBehaviour:
     imageToShow:
     - {fileID: 103401751}
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -1904,6 +1952,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -1940,6 +1991,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -1970,6 +2024,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -2000,6 +2057,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -2038,6 +2098,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -2069,6 +2132,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -2103,6 +2169,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -2137,6 +2206,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -2166,6 +2238,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -2194,6 +2269,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -2225,6 +2303,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -2252,6 +2333,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 1
     interactionAllow: 1
@@ -12246,6 +12330,7 @@ GameObject:
   - component: {fileID: 1630506859}
   - component: {fileID: 1630506861}
   - component: {fileID: 1630506860}
+  - component: {fileID: 1630506862}
   m_Layer: 5
   m_Name: Black Screen
   m_TagString: Untagged
@@ -12286,7 +12371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12311,6 +12396,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630506858}
   m_CullTransparentMesh: 1
+--- !u!114 &1630506862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630506858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23677861e527d04eb41c9039c15a533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1645114951
 GameObject:
   m_ObjectHideFlags: 0

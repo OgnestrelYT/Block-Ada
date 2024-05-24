@@ -1540,6 +1540,36 @@ MonoBehaviour:
   acts:
   - times: 0
     dialogues:
+      messages: []
+      avatar: {fileID: 21300000, guid: 3cd25a2353ea31241af9868d6039bf0e, type: 3}
+      bg: {fileID: 21300000, guid: 2900c38956c684641846bf174beaffc6, type: 3}
+      name: "\u0410\u0434\u0430"
+    animations:
+      animationsList: []
+      animNum: []
+      isLoop: 0
+    task: []
+    imageToShow: []
+    dark: 1
+    smoothStart: 0
+    smoothEnd: 1
+    smoothTime: 1
+    showHelp: 0
+    moveAllow: 0
+    interactionAllow: 0
+    interactionAllowDoor: 0
+    interactionAllowPivo: 0
+    isCheckOpeningMenu: 0
+    isCheckAny: 0
+    needToCheckSecondTask: 0
+    needToCheckLevers: 0
+    achievements:
+      id: 
+      value: 
+    description: 
+    isCompleted: 0
+  - times: 0
+    dialogues:
       messages:
       - "\u042F \u043F\u043E\u0447\u0442\u0438 \u043D\u0430 \u043C\u0435\u0441\u0442\u0435,
         \u0432\u043E\u0442 \u0442\u043E\u043B\u044C\u043A\u043E \u044D\u0442\u0430
@@ -1560,6 +1590,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -1587,6 +1620,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 1
     moveAllow: 0
     interactionAllow: 0
@@ -1614,6 +1650,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 1
     interactionAllow: 1
@@ -1644,6 +1683,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 0
     interactionAllow: 0
@@ -1671,6 +1713,9 @@ MonoBehaviour:
     task: []
     imageToShow: []
     dark: 0
+    smoothStart: 0
+    smoothEnd: 0
+    smoothTime: 0
     showHelp: 0
     moveAllow: 1
     interactionAllow: 0
@@ -6381,7 +6426,7 @@ GameObject:
   - component: {fileID: 816093509}
   - component: {fileID: 816093512}
   - component: {fileID: 816093511}
-  - component: {fileID: 816093510}
+  - component: {fileID: 816093513}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -6404,24 +6449,6 @@ Transform:
   m_Father: {fileID: 1224080717}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &816093510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 816093508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9a5806b1651e884e91e525a41d40958, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSceneChanger: 1
-  scene: 5 location
-  buttonPref: {fileID: 8239099808036771926, guid: 5c64ed7cc618eb74189770f3b2b6fd56, type: 3}
-  parent: {fileID: 1008465097}
-  button: {fileID: 0}
-  buttonObj: {fileID: 0}
 --- !u!61 &816093511
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6500,6 +6527,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &816093513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816093508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98ec0058022d4594fa47b10007ee81f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSceneChanger: 1
+  scene1: 5 location 1
+  scene2: 5 location 2
+  scene3: 5 location 3
+  buttonPref: {fileID: 8239099808036771926, guid: 5c64ed7cc618eb74189770f3b2b6fd56, type: 3}
+  parent: {fileID: 1008465097}
+  button: {fileID: 0}
+  buttonObj: {fileID: 0}
 --- !u!1 &837024837
 GameObject:
   m_ObjectHideFlags: 0
@@ -11100,6 +11147,7 @@ GameObject:
   - component: {fileID: 1630506859}
   - component: {fileID: 1630506861}
   - component: {fileID: 1630506860}
+  - component: {fileID: 1630506862}
   m_Layer: 5
   m_Name: Black Screen
   m_TagString: Untagged
@@ -11165,6 +11213,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630506858}
   m_CullTransparentMesh: 1
+--- !u!114 &1630506862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630506858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23677861e527d04eb41c9039c15a533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1640689828
 GameObject:
   m_ObjectHideFlags: 0

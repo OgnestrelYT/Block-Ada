@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/3 location.unity
     guid: cb54e9c525e4ff849b9198af1c118230
+  - enabled: 1
+    path: Assets/Scenes/4 location.unity
+    guid: f22cd7057d9e37b449f8ded46373d62f
+  - enabled: 1
+    path: Assets/Scenes/5 location 2.unity
+    guid: e72b0a8c0c1956d4eb341b0edd5c85fd
   - enabled: 0
     path: Assets/Scenes/Down floors.unity
     guid: 5e079bf92e25a00428f30eab1971e38e

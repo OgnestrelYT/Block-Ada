@@ -77,6 +77,7 @@ public class SecondTask : MonoBehaviour
         Car.ID = ID;
 
         animator.SetBool("isTrue", isTrue);
+        PlayerPrefs.SetInt("isFirst", 1);
         taskMenu.SetActive(false);
         other.SetActive(false);
         helpMenu.SetActive(false);

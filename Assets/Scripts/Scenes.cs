@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Scenes : MonoBehaviour
 {
@@ -56,7 +57,10 @@ public class Scenes : MonoBehaviour
         [SerializeField] public GameObject[] imageToShow; // показ картинки
 
         [Space]
-        [SerializeField] public bool dark; // настраиваемый список диалога
+        [SerializeField] public bool dark; // тёмный экран нужен или нет
+        [SerializeField] public bool smoothStart; // затухание
+        [SerializeField] public bool smoothEnd; // растухание
+        [SerializeField] public float smoothTime; // время потушенного
 
         [Space]
         [SerializeField] public bool showHelp; // показывать ли окно помощи
@@ -71,6 +75,11 @@ public class Scenes : MonoBehaviour
         public bool isCheckAny; // нужно ли проверять булеву переменную и здругих классов
         public bool needToCheckSecondTask; // нужно ли проверять что игрок прошел головоломку
         public bool needToCheckLevers; // нужно ли проверять что игрок прошел рычаги
+
+        [Space]
+
+        public bool changeScene;
+        public string scene;
 
         [Space]
 
@@ -181,6 +190,12 @@ public class Scenes : MonoBehaviour
         } else {
             canSkipLever = true;
         }
+
+
+        if (acts[numAct].changeScene) {
+            numAct = 0;
+            SceneManager.LoadScene(acts[numAct].scene);
+        }
         
 
         if (acts[numAct].showHelp) {
@@ -194,6 +209,18 @@ public class Scenes : MonoBehaviour
 
         // Затемнение
         black.SetActive(acts[numAct].dark);
+        if (acts[numAct].dark) {
+            acts[numAct].times = acts[numAct].smoothTime;
+            if (acts[numAct].smoothStart) {
+                acts[numAct].times += 1;
+            }
+            if (acts[numAct].smoothEnd) {
+                acts[numAct].times += 1;
+            }
+            ScreenFader.smoothStart = acts[numAct].smoothStart;
+            ScreenFader.time = acts[numAct].smoothTime;
+            ScreenFader.smoothEnd = acts[numAct].smoothEnd;
+        }
 
         // Диалоги
         if (acts[numAct].dialogues.messages.Length > 0) {
@@ -237,6 +264,7 @@ public class Scenes : MonoBehaviour
         Lever.interactionAllow = acts[numAct].interactionAllow;
         AnyMenu.interactionAllow = acts[numAct].interactionAllowPivo;
 
+
         if (acts[numAct].isCheckOpeningMenu) {
             canSkipMenu = SecondTask.openFirstly;
         }
@@ -273,11 +301,14 @@ public class Scenes : MonoBehaviour
                 }
                 if (!acts[numAct].animations.isLoop) {
                     acts[numAct].animations.animationsList[i].SetBool(acts[numAct].animations.animNum[i], false);
+                } else {
+                    canSkipA = true;
                 }
             }
         }
 
         Door.interactionAllow = acts[numAct].interactionAllowDoor;
+        SpecificDoor.interactionAllow = acts[numAct].interactionAllowDoor;
 
         if ((canSkipD) && (canSkipTime) && (canSkipA) && (canSkipT) && (numAct < countActs - 1) && (canSkipMenu) && (canSkipFinish) && (canSkipLever) && (canSkipHelpMenu) && (canSkipCheck)) {
             timer = 0f;
